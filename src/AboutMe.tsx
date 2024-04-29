@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import portrait from "../public/portrait.png";
+import portrait from "../public/portrait.webp";
 import { SocialLinks } from "./SocialLinks";
 
 export function AboutMe() {
