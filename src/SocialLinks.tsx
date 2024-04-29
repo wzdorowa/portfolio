@@ -3,6 +3,7 @@ import { NextSvgIcon } from "./NextSvgIcon";
 import email from "../public/icons/email.svg";
 import telegram from "../public/icons/telegram.svg";
 import vk from "../public/icons/vk.svg";
+import { EMAIL, VK_URL } from "./urls";
 
 export function SocialLinks() {
   return (
@@ -11,7 +12,7 @@ export function SocialLinks() {
         <IconBox>
           <NextSvgIcon image={email} fontSize="inherit" alt="email" />
         </IconBox>
-        <Link href="mailto:w.zdorowa@gmail.com">w.zdorowa@gmail.com</Link>
+        <Link href={EMAIL}>w.zdorowa@gmail.com</Link>
       </LinkBox>
       <LinkBox>
         <IconBox>
@@ -23,7 +24,9 @@ export function SocialLinks() {
         <IconBox>
           <NextSvgIcon image={vk} fontSize="inherit" alt="vk" />
         </IconBox>
-        <Link href="https://vk.com/serdcenika">serdcenika</Link>
+        <Link target="_blank" href={VK_URL}>
+          serdcenika
+        </Link>
       </LinkBox>
     </Root>
   );
@@ -34,9 +37,17 @@ const Root = styled("div")({
   flexWrap: "wrap",
   columnGap: 20,
   rowGap: 16,
+  marginBottom: 40,
+  padding: "0 24px",
 
-  "@media (min-width: 1150px)": {
-    columnGap: 45,
+  "@media (min-width: 600px)": {
+    marginLeft: "10%",
+    padding: "0",
+  },
+  "@media (min-width: 1024px)": {
+    columnGap: 32,
+    marginBottom: 0,
+    marginLeft: 0,
   },
 });
 

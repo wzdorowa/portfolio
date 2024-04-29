@@ -1,3 +1,5 @@
+import { APOSTRO, CERT, METALAMP, ONLY } from "./urls";
+
 export const education = [
   {
     name: "2012",
@@ -12,7 +14,14 @@ export const education = [
   {
     name: "2022",
     title: "MetaLamp (Frontend) г. Томск",
-    description: "сертификат № F-0902",
+    description: (
+      <span>
+        сертификат{" "}
+        <a target="_blank" href={CERT}>
+          № F-0902
+        </a>
+      </span>
+    ),
   },
 ];
 
@@ -25,7 +34,21 @@ export const experience = [
   {
     name: "2021 - настоящее время",
     title: "Frontend developer (удаленно)",
-    description: "MetaLamp (стажировка), Only, Apostro",
+    description: (
+      <span>
+        <a target="_blank" href={METALAMP}>
+          MetaLamp (стажировка)
+        </a>
+        ,{" "}
+        <a target="_blank" href={ONLY}>
+          Only
+        </a>
+        ,{" "}
+        <a target="_blank" href={APOSTRO}>
+          Apostro
+        </a>
+      </span>
+    ),
   },
 ];
 

@@ -5,7 +5,7 @@ import React from "react";
 type TableData = {
   name: string;
   title?: string;
-  description: string;
+  description: React.ReactNode;
 };
 
 type Props = {
@@ -88,7 +88,7 @@ const SectionContent = styled("table")({
   },
 
   "& th": {
-    color: "#4E64D5",
+    color: "#125388",
     verticalAlign: "top",
     textAlign: "start",
     maxWidth: 170,
@@ -106,6 +106,15 @@ const TableCell = styled("span")({
 
   "& span": {
     maxWidth: 375,
+  },
+
+  "& a": {
+    textDecoration: "underline",
+    transition: "opacity 200ms",
+
+    "&:hover": {
+      opacity: 0.7,
+    },
   },
 
   "& span:last-child": {

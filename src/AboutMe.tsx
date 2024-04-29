@@ -22,7 +22,22 @@ export function AboutMe() {
           <SocialLinks />
         </DesktopSocialLinks>
       </AboutMeInfo>
-      <Portrait>
+      <PortraitDesktop>
+        <Image
+          src={portrait.src}
+          width={533}
+          height={800}
+          alt="Portrait Zdorova Veronika"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center center",
+            display: "block",
+            width: "auto",
+            height: "100%",
+          }}
+        />
+      </PortraitDesktop>
+      <PortraitMobile>
         <Image
           src={portrait.src}
           width={533}
@@ -35,7 +50,7 @@ export function AboutMe() {
             display: "block",
           }}
         />
-      </Portrait>
+      </PortraitMobile>
       <MobileSocialLinks>
         <SocialLinks />
       </MobileSocialLinks>
@@ -47,11 +62,13 @@ const Box = styled("div")({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
+  width: "100%",
   gap: 40,
+  background: "#F5F5F5",
 
   "@media (min-width: 1024px)": {
     flexDirection: "row",
-    height: "calc(100vh - 70px - 140px)",
+    height: "100vh",
   },
 });
 
@@ -59,7 +76,22 @@ const AboutMeInfo = styled("div")({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-  gap: 40,
+  gap: 16,
+  margin: "0 auto",
+  padding: "0 24px",
+
+  "@media (min-width: 600px)": {
+    gap: 24,
+  },
+  "@media (min-width: 760px)": {
+    marginLeft: "10%",
+    marginTop: 40,
+    padding: 0,
+    gap: 40,
+  },
+  "@media (min-width: 1024px)": {
+    marginBottom: 150,
+  },
 });
 
 const Navigation = styled("div")({
@@ -130,9 +162,28 @@ const MobileSocialLinks = styled("div")({
   },
 });
 
-const Portrait = styled("div")({
-  border: "solid #5B5B5C",
+const PortraitDesktop = styled("div")({
+  width: "50vw",
+  height: "100vh",
+  display: "none",
+
+  "@media (min-width: 1024px)": {
+    display: "flex",
+    justifyContent: "end",
+    overflow: "hidden",
+  },
+});
+
+const PortraitMobile = styled("div")({
   overflow: "hidden",
   maxWidth: 533,
   width: "100%",
+  margin: "0 auto",
+
+  "@media (min-width: 760px)": {
+    marginLeft: "10%",
+  },
+  "@media (min-width: 1024px)": {
+    display: "none",
+  },
 });

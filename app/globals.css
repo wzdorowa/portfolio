@@ -15,8 +15,8 @@ body {
 
 body {
   color: #000;
-  background: #F5F5F5;
-  font-size: 12px;
+  background: #E1E1E1;
+  font-size: 13px;
   position: relative;
 
   @media (min-width: 600px) {

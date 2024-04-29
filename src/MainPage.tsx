@@ -61,16 +61,6 @@ export function MainPage() {
 const Root = styled("div")({
   display: "flex",
   flexDirection: "column",
-  maxWidth: 1280,
-  margin: "0 auto",
-  padding: "16px 24px 0",
-
-  "@media (min-width: 600px)": {
-    padding: "50px 32px 0",
-  },
-  "@media (min-width: 1024px)": {
-    padding: "70px 40px 0",
-  },
 });
 
 const GradientSticky = styled("div")({
@@ -80,20 +70,26 @@ const GradientSticky = styled("div")({
   right: 0,
   width: "100%",
   height: 70,
-  background: "linear-gradient(360deg, white 0%, #fff0 100%)",
+  background: "linear-gradient(360deg, #E1E1E1 0%, #fff0 100%)",
 });
 
 const InfoBox = styled("div")({
   display: "flex",
   flexDirection: "column",
+  maxWidth: 800,
+  margin: "0 auto",
   gap: 50,
-  marginTop: 120,
+  marginTop: 100,
+  padding: "0 24px",
 
   "@media (min-width: 600px)": {
-    marginTop: 160,
+    marginTop: 100,
+  },
+  "@media (min-width: 848px)": {
+    padding: "0",
   },
   "@media (min-width: 1024px)": {
-    marginTop: 200,
+    marginTop: 100,
   },
 });
 
@@ -101,12 +97,18 @@ const Footer = styled("div")({
   display: "flex",
   justifyContent: "end",
   alignItems: "end",
+  maxWidth: 800,
+  width: "100%",
+  margin: "0 auto",
   height: 120,
-  padding: "20px 0",
+  padding: "20px 24px",
   zIndex: 1,
 
   "@media (min-width: 600px)": {
     marginTop: 160,
+  },
+  "@media (min-width: 848px)": {
+    padding: "20px 0",
   },
   "@media (min-width: 1024px)": {
     marginTop: 200,
