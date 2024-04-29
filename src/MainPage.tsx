@@ -1,153 +1,114 @@
-import { Link as MuiLink, styled } from "@mui/material";
+import { styled } from "@mui/material";
 import React from "react";
-import Image from "next/image";
-import portrait from "../public/portrait.png";
-import email from "../public/icons/email.svg";
-import telegram from "../public/icons/telegram.svg";
-import vk from "../public/icons/vk.svg";
+
+import educationIcon from "../public/icons/education.svg";
+import experienceIcon from "../public/icons/experience.svg";
+import hobbyIcon from "../public/icons/hobby.svg";
 
 import { NextSvgIcon } from "./NextSvgIcon";
+import { InfoSection } from "./InfoSection";
+import { education, experience, hobby } from "./constants";
+import { AboutMe } from "./AboutMe";
 
 export function MainPage() {
   return (
-    <Root>
-      <Box>
-        <AboutMe>
-          <Navigation>
-            <Anchor href="#education">Образование</Anchor>
-            <Anchor href="#experience">Опыт работы</Anchor>
-            <Anchor href="#hobby">Увлечения</Anchor>
-          </Navigation>
-          <Title>
-            <span>Здорова</span>
-            <span>Вероника</span>
-            <span>Frontend developer</span>
-          </Title>
-          <SocialLinks>
-            <LinkBox>
-              <IconBox>
-                <NextSvgIcon image={email} fontSize="inherit" alt="email" />
-              </IconBox>
-              <Link href="mailto:w.zdorowa@gmail.com">w.zdorowa@gmail.com</Link>
-            </LinkBox>
-            <LinkBox>
-              <IconBox>
-                <NextSvgIcon
-                  image={telegram}
-                  fontSize="inherit"
-                  alt="telegram"
-                />
-              </IconBox>
-              <Text style={{ fontWeight: "normal" }}>@zdorova_veronika</Text>
-            </LinkBox>
-            <LinkBox>
-              <IconBox>
-                <NextSvgIcon image={vk} fontSize="inherit" alt="vk" />
-              </IconBox>
-              <Link href="https://vk.com/serdcenika">serdcenika</Link>
-            </LinkBox>
-          </SocialLinks>
-        </AboutMe>
-        <Portrait>
-          <Image
-            src={portrait.src}
-            width={533}
-            height={800}
-            alt="Portrait Zdorova Veronika"
-            style={{ objectFit: "cover", objectPosition: "center center" }}
+    <>
+      <Root>
+        <AboutMe />
+        <InfoBox>
+          <InfoSection
+            title="Образование"
+            icon={
+              <NextSvgIcon
+                image={educationIcon}
+                fontSize="inherit"
+                alt="email"
+              />
+            }
+            sectionId="education"
+            tableData={education}
           />
-        </Portrait>
-      </Box>
-    </Root>
+          <InfoSection
+            title="Опыт работы"
+            icon={
+              <NextSvgIcon
+                image={experienceIcon}
+                fontSize="inherit"
+                alt="email"
+              />
+            }
+            sectionId="experience"
+            tableData={experience}
+          />
+          <InfoSection
+            title="Увлечения"
+            icon={
+              <NextSvgIcon image={hobbyIcon} fontSize="inherit" alt="email" />
+            }
+            sectionId="hobby"
+            tableData={hobby}
+          />
+        </InfoBox>
+        <Footer>
+          <span>Designed by Zdorova Veronika</span>
+        </Footer>
+      </Root>
+      <GradientSticky />
+    </>
   );
 }
 
 const Root = styled("div")({
   display: "flex",
   flexDirection: "column",
-  maxWidth: 1200,
+  maxWidth: 1280,
   margin: "0 auto",
-  paddingTop: 70,
+  padding: "16px 24px 0",
+
+  "@media (min-width: 600px)": {
+    padding: "50px 32px 0",
+  },
+  "@media (min-width: 1024px)": {
+    padding: "70px 40px 0",
+  },
 });
 
-const Box = styled("div")({
-  display: "flex",
-  justifyContent: "space-between",
-  height: "calc(100vh - 70px - 140px)",
-});
-
-const AboutMe = styled("div")({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-});
-
-const Navigation = styled("div")({
+const GradientSticky = styled("div")({
+  position: "fixed",
+  bottom: 0,
+  left: 0,
+  right: 0,
+  width: "100%",
   height: 70,
+  background: "linear-gradient(360deg, white 0%, #fff0 100%)",
+});
+
+const InfoBox = styled("div")({
   display: "flex",
-  gap: 60,
-});
-
-const Anchor = styled("a")({
-  color: "#4E64D5",
-  fontWeight: 500,
-  textDecoration: "underline",
-  transition: "color 200ms",
-
-  "&:hover": {
-    cursor: "pointer",
-    color: "#4E64D570",
-  },
-});
-
-const Title = styled("span")({
-  display: "inline-flex",
   flexDirection: "column",
-  color: "#343D6F",
-  fontSize: 64,
-  fontWeight: "bold",
-  margin: 0,
-  marginBottom: 116,
-  padding: 0,
+  gap: 50,
+  marginTop: 120,
 
-  "& span:last-child": {
-    color: "#5B5B5C",
-    fontSize: 48,
-    fontWeight: "normal",
+  "@media (min-width: 600px)": {
+    marginTop: 160,
+  },
+  "@media (min-width: 1024px)": {
+    marginTop: 200,
   },
 });
 
-const SocialLinks = styled("div")({
+const Footer = styled("div")({
   display: "flex",
-  gap: 45,
-});
+  justifyContent: "end",
+  alignItems: "end",
+  height: 120,
+  padding: "20px 0",
+  zIndex: 1,
 
-const Link = styled(MuiLink)({
-  textDecoration: "none",
-  transition: "color 200ms",
-
-  "&:hover": {
-    cursor: "pointer",
-    color: "#4E64D570",
+  "@media (min-width: 600px)": {
+    marginTop: 160,
   },
-});
-
-const Text = styled("span")({
-  color: "#4E64D5",
-  fontWeight: "bold",
-});
-
-const LinkBox = styled("span")({
-  display: "inline-flex",
-  gap: 8,
-});
-
-const IconBox = styled("span")({
-  fontSize: 20,
-});
-
-const Portrait = styled("div")({
-  border: "solid #5B5B5C",
-  overflow: "hidden",
-  position: "relative",
+  "@media (min-width: 1024px)": {
+    marginTop: 200,
+  },
 });

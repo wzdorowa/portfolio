@@ -1,10 +1,1 @@
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_11_54)">
-<path d="M18.2949 1.81379C18.2949 1.81379 20.145 1.09237 19.9909 2.84441C19.9395 3.56585 19.477 6.09085 19.1172 8.82199L17.8838 16.9123C17.8838 16.9123 17.781 18.0975 16.8559 18.3037C15.9308 18.5098 14.5432 17.5822 14.2862 17.3761C14.0807 17.2215 10.4318 14.9026 9.14695 13.7689C8.78719 13.4598 8.37605 12.8414 9.19833 12.1199L14.5946 6.9669C15.2113 6.34852 15.828 4.90566 13.2584 6.65771L6.06338 11.5531C6.06338 11.5531 5.2411 12.0684 3.69933 11.6047L0.358772 10.574C0.358772 10.574 -0.874662 9.80109 1.23245 9.02809C6.37176 6.60614 12.6931 4.13266 18.2949 1.81379Z" fill="#4E64D5"/>
-</g>
-<defs>
-<clipPath id="clip0_11_54">
-<rect width="20" height="20" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg stroke-miterlimit="10" viewBox="0 0 42 35" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><clipPath id="a"><path d="M0 0h42v35H0z"/></clipPath><g clip-path="url(#a)" vectornator:layerName="Untitled"><path d="M38.4.3s3.9-1.5 3.6 2.2C41.9 4 40.9 9.3 40 15l-2.5 17s-.3 2.5-2.2 3c-2 .4-4.9-1.6-5.4-2-.4-.3-8-5.2-10.8-7.6-.7-.6-1.6-2 .1-3.4L30.6 11c1.3-1.3 2.6-4.3-2.8-.6l-15 10.3s-1.8 1-5 0l-7-2s-2.6-1.7 1.8-3.3C13.4 10.4 26.6 5.2 38.4.3z" fill="#4e64d5" vectornator:layerName="path"/></g></svg>
