@@ -21,7 +21,7 @@ export const previews = [
     imgScr: jQuerySlider.src,
     descriptionTitle: "Технологии: JavaScript, TypeScript, JQuery, Jest",
     descriptionList: [
-      "Создание проекта с использованием паттернов MVC и Observer и Facade,",
+      "Создание проекта с использованием паттернов MVC, Observer и Facade,",
       "Разделение конфигурирования и бизнес-логики,",
       "Написание документации (описание заложенной архитектуры, визуализация её через UML-диаграммы),",
       "Написание unit-тестов.",
