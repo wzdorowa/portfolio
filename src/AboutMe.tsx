@@ -8,11 +8,14 @@ export function AboutMe() {
   return (
     <Box>
       <AboutMeInfo>
-        <Navigation>
-          <Anchor href="#education">Образование</Anchor>
-          <Anchor href="#experience">Опыт работы</Anchor>
-          <Anchor href="#hobby">Увлечения</Anchor>
-        </Navigation>
+        <NavigationBox>
+          <Navigation>
+            <Anchor href="#education">Образование</Anchor>
+            <Anchor href="#experience">Опыт работы</Anchor>
+            <Anchor href="#hobby">Увлечения</Anchor>
+            <Anchor href="./portfolio">Портфолио</Anchor>
+          </Navigation>
+        </NavigationBox>
         <Title>
           <span>Здорова</span>
           <span>Вероника</span>
@@ -73,6 +76,7 @@ const Box = styled("div")({
 });
 
 const AboutMeInfo = styled("div")({
+  width: "100%",
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
@@ -82,9 +86,10 @@ const AboutMeInfo = styled("div")({
 
   "@media (min-width: 600px)": {
     gap: 24,
+    width: "auto",
   },
   "@media (min-width: 760px)": {
-    marginLeft: "10%",
+    marginLeft: "6%",
     marginTop: 40,
     padding: 0,
     gap: 40,
@@ -92,16 +97,36 @@ const AboutMeInfo = styled("div")({
   "@media (min-width: 1024px)": {
     marginBottom: 150,
   },
+  "@media (min-width: 1360px)": {
+    marginLeft: "10%",
+  },
+});
+
+const NavigationBox = styled("div")({
+  "@media (max-width: 450px)": {
+    maskImage:
+      "linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .25) 9px, rgba(0, 0, 0, 1) 18px, rgba(0, 0, 0, 1) calc(100% - 18px), rgba(0, 0, 0, .25) calc(100% - 9px), rgba(0, 0, 0, 0))",
+    overflowX: "scroll",
+    padding: "0 15px",
+    margin: "0 -15px",
+
+    // hide scrollbar
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
+    msOverflowStyle: "none" /* IE и Edge */,
+    scrollbarWidth: "none" /* Firefox */,
+  },
 });
 
 const Navigation = styled("div")({
   display: "flex",
   alignItems: "center",
   height: 70,
-  gap: 30,
+  gap: 20,
 
-  "@media (min-width: 1150px)": {
-    gap: 60,
+  "@media (min-width: 760px)": {
+    gap: 30,
   },
 });
 
@@ -110,6 +135,7 @@ const Anchor = styled("a")({
   fontWeight: 500,
   textDecoration: "underline",
   transition: "color 200ms",
+  whiteSpace: "nowrap",
 
   "&:hover": {
     cursor: "pointer",

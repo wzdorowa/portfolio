@@ -4,3 +4,6 @@ export const CERT = "https://metalamp.ru/cert";
 export const METALAMP = "https://metalamp.ru/";
 export const ONLY = "https://only.digital/";
 export const APOSTRO = "https://www.apostro.xyz/";
+export const TOXIN = "https://wzdorowa.github.io/TOXIN/";
+export const JQUERY_SLIDER = "https://wzdorowa.github.io/jQuery-slider/";
+export const JQUERY_SLIDER_DOCS = "https://github.com/wzdorowa/jQuery-slider";
