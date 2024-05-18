@@ -1,4 +1,4 @@
-import landingPage from "./landing-page.jpeg";
+import landingPage from "./landing-page.webp";
 import jQuerySlider from "./jQuery-slider.png";
 import { JQUERY_SLIDER, JQUERY_SLIDER_DOCS, TOXIN } from "../urls";
 
