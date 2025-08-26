@@ -1,17 +1,23 @@
-import type { Metadata } from "next";
-import { Jura } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
+import { montserrat } from "./fonts";
+import ThemeRegistry from "./ThemeRegistry";
 
-const jura = Jura({ subsets: ["latin"] });
+export const metadata: Metadata = {
+  title: "Вероника Здорова - Портфолио",
+  description: "Портфолио UI/UX дизайнера и фронтенд-разработчика",
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={jura.className}>{children}</body>
+    <html lang="ru">
+      <body className={`${montserrat.variable} ${montserrat.className}`}>
+        <ThemeRegistry>{children}</ThemeRegistry>
+      </body>
     </html>
   );
 }

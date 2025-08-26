@@ -1,4 +1,4 @@
-import { MainPage } from "@/src/MainPage";
+import { MainPage } from "@/src/pages/MainPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
