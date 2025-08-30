@@ -22,7 +22,7 @@ export const Header: FC = () => {
         <NavigationLink href="/education">
           <Typography variant="body1">Где училась</Typography>
         </NavigationLink>
-        <NavigationLink href="#experience">
+        <NavigationLink href="/experience">
           <Typography variant="body1">Где работала</Typography>
         </NavigationLink>
       </Navigation>
