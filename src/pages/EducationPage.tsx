@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { styled, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
+import { ZoomInSharp } from "@mui/icons-material";
 import { Header } from "../components/Header";
 
 // Constants
@@ -37,7 +38,9 @@ function CertificatePreview({ onOpen }: CertificatePreviewProps) {
         src={RESOURCES.educationImage}
         alt={EDUCATION_TEXT.certificateAlt}
       />
-      <MagnifyIcon className="magnify-icon">🔍</MagnifyIcon>
+      <IconWrapper className="magnify-icon">
+        <ZoomInSharp />
+      </IconWrapper>
     </PdfThumb>
   );
 }
@@ -167,12 +170,11 @@ const CertificateImage = styled("img")({
   transition: "filter 0.3s ease",
 });
 
-const MagnifyIcon = styled("div")({
+const IconWrapper = styled("div")({
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  fontSize: 24,
   backgroundColor: "rgba(0,0,0,0.7)",
   color: "white",
   borderRadius: "50%",
@@ -184,6 +186,10 @@ const MagnifyIcon = styled("div")({
   opacity: 0,
   transition: "opacity 0.3s ease",
   pointerEvents: "none",
+
+  "& svg": {
+    fontSize: 24,
+  },
 });
 
 const Modal = styled("div")({
