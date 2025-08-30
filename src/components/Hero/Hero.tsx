@@ -3,7 +3,7 @@
 import { FC, ReactNode } from "react";
 import { styled } from "@mui/material";
 import { Typography } from "@mui/material";
-import EmailIcon from "@mui/icons-material/Email";
+import EmailIcon from "@mui/icons-material/EmailSharp";
 import TelegramIcon from "@mui/icons-material/Telegram";
 
 import BackButtonIcon from "../../../public/icons/BackButtonIcon";
