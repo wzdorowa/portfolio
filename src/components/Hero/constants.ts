@@ -1,0 +1,16 @@
+export const HERO_CONSTANTS = {
+  TITLE_FONT_SIZE: "4.5rem",
+  TITLE_LINE_HEIGHT: 1.15,
+  CONTENT_MAX_WIDTH: 450,
+  CONTENT_GAP: 72,
+  TEXT_LINE_HEIGHT: 1.7,
+  TEXT_PADDING_RIGHT: 12,
+  SHADOW_HEIGHT: 20,
+  SHADOW_TRANSITION: "opacity 0.2s ease",
+  SCROLLBAR: {
+    WIDTH: 4,
+    BORDER_RADIUS: 2,
+    THUMB_COLOR: "rgba(0, 0, 0, 0.2)",
+    THUMB_HOVER_COLOR: "rgba(0, 0, 0, 0.3)",
+  },
+} as const;
