@@ -4,11 +4,12 @@ import Image from "next/image";
 import React from "react";
 
 import { Overview } from "../components";
+import { OVERVIEW_DATA } from "../data";
 
 export function MainPage() {
   return (
     <Root>
-      <Overview />
+      <Overview {...OVERVIEW_DATA.main} />
       <ImageColumn>
         <ResponsiveImage
           src="/images/photo.jpg"
@@ -24,7 +25,6 @@ export function MainPage() {
 }
 
 const Root = styled("div")({
-  // min-height: 100vh;
   display: "grid",
   gridTemplateColumns: "1fr 2fr",
   height: "100vh",

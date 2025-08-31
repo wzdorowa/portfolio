@@ -1,6 +1,6 @@
 // Types
 export interface PortfolioItem {
-  id: number;
+  id: number | string;
   image: string;
   alt: string;
 }
@@ -8,42 +8,42 @@ export interface PortfolioItem {
 // Portfolio data
 export const PORTFOLIO_ITEMS: readonly PortfolioItem[] = [
   {
-    id: 1,
+    id: "vaults-admin-panel",
     image: "/images/portfolio/vaults-admin-panel.png",
     alt: "Vaults admin panel",
   },
   {
-    id: 2,
+    id: "bitzevskaya-fabrica",
     image: "/images/portfolio/bitzevskaya-fabrica.png",
     alt: "Битцевская фабрика (Главная страница)",
   },
   {
-    id: 3,
+    id: "crypto-landing",
     image: "/images/portfolio/apostro.png",
     alt: "Apostro lending",
   },
   {
-    id: 4,
+    id: "murnorka",
     image: "/images/portfolio/murnorka.png",
     alt: "Мурнорка (Промостраница коллекции)",
   },
   {
-    id: 5,
+    id: "resolve-stats",
     image: "/images/portfolio/resolve-stats.png",
     alt: "Resolve stats",
   },
   {
-    id: 6,
+    id: "smart-socket",
     image: "/images/portfolio/rozetka.png",
     alt: "Умная розетка",
   },
   {
-    id: 7,
+    id: "dostavka",
     image: "/images/portfolio/dostavka.png",
     alt: "Сервис доставки",
   },
   {
-    id: 8,
+    id: "documents",
     image: "/images/portfolio/documents.png",
     alt: "Сервис хранения документов",
   },

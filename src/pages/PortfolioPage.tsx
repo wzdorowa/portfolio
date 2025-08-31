@@ -3,22 +3,21 @@
 import { styled } from "@mui/material";
 import React from "react";
 import Box from "@mui/material/Box";
+import Link from "next/link";
 
 import { Overview } from "../components";
-import { PORTFOLIO_ITEMS } from "../data";
+import { PORTFOLIO_ITEMS, OVERVIEW_DATA } from "../data";
 
 export function PortfolioPage() {
   return (
     <Root>
-      <Overview type="portfolio" />
+      <Overview {...OVERVIEW_DATA.portfolio} />
       <PortfolioSection>
         <PortfolioGrid>
           {PORTFOLIO_ITEMS.map((item) => (
-            <PortfolioCard
-              key={item.id}
-              backgroundImage={item.image}
-              title={item.alt}
-            />
+            <Link key={item.id} href={`/portfolio/${item.id}`} passHref>
+              <PortfolioCard backgroundImage={item.image} title={item.alt} />
+            </Link>
           ))}
         </PortfolioGrid>
       </PortfolioSection>
@@ -71,10 +70,12 @@ const PortfolioCard = styled("div")<{ backgroundImage: string }>(
     backgroundRepeat: "no-repeat",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
     transition: "transform 0.3s ease",
+    cursor: "pointer",
+    display: "block",
+    textDecoration: "none",
 
     "&:hover": {
       transform: "scale(1.05)",
-      cursor: "pointer",
     },
   })
 );

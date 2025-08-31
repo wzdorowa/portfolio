@@ -32,7 +32,6 @@ export const Header: FC = () => {
 
 const HeaderContainer = styled("div")({
   display: "flex",
-  paddingTop: 40,
 });
 
 const NavigationLink = styled(Link)({
