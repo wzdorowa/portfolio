@@ -1,9 +1,0 @@
-export { ProjectPage } from "../ProjectPage";
-export { ProjectContent } from "./ProjectContent";
-export { ProjectSection } from "./ProjectSection";
-export { ProjectText } from "./ProjectText";
-export { WorkSection } from "./WorkSection";
-export { ProjectImageSection } from "./ProjectImageSection";
-export { ProjectNotFound } from "./ProjectNotFound";
-export { useProject } from "./useProject";
-export { PROJECT_PAGE_CONSTANTS } from "./constants";

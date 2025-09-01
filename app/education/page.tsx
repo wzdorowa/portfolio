@@ -1,4 +1,4 @@
-import { EducationPage } from "@/src/components/EducationPage/EducationPage";
+import { EducationPage } from "@/src/page-components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,5 +1,5 @@
-import { ProjectPage } from "../../../src/components/ProjectPage";
-import { PROJECT_DATA } from "../../../src/data/projectData";
+import { ProjectPage } from "@/src/page-components";
+import { PROJECT_DATA } from "@/src/data/projectData";
 import { Metadata } from "next";
 
 interface ProjectPageRouteProps {
