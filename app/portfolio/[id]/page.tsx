@@ -1,4 +1,4 @@
-import { ProjectPage } from "../../../src/pages/ProjectPage";
+import { ProjectPage } from "../../../src/components/ProjectPage";
 import { PROJECT_DATA } from "../../../src/data/projectData";
 import { Metadata } from "next";
 

@@ -14,8 +14,7 @@ interface ProjectPageProps {
 }
 
 export function ProjectPage({ projectId }: ProjectPageProps) {
-  const { projectData, handleBackClick, isProjectFound } =
-    useProject(projectId);
+  const { projectData, handleBackClick, isProjectFound } = useProject(projectId);
 
   if (!isProjectFound) {
     return <ProjectNotFound onBackClick={handleBackClick} />;
@@ -32,7 +31,10 @@ export function ProjectPage({ projectId }: ProjectPageProps) {
         />
       </ContentSection>
 
-      <ProjectImageSection src={projectData!.image} alt={projectData!.title} />
+      <ProjectImageSection
+        src={projectData!.image}
+        alt={projectData!.title}
+      />
     </Root>
   );
 }

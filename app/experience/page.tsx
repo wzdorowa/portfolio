@@ -1,4 +1,4 @@
-import { ExperiencePage } from "../../src/pages/ExperiencePage";
+import { ExperiencePage } from "../../src/components/ExperiencePage";
 
 export default function Experience() {
   return <ExperiencePage />;
