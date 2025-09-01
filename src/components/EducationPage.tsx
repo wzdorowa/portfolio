@@ -1,38 +1,37 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { styled, Typography } from "@mui/material";
-import Box from "@mui/material/Box";
+import { styled, Typography, Box } from "@mui/material";
 import { ZoomInSharp } from "@mui/icons-material";
 import { Header } from "../components/Header";
 import { EDUCATION_RESOURCES, EDUCATION_TEXT } from "../data";
+import { useModal } from "./EducationPage/useModal";
 
-// Components
+// Компонент превью сертификата
 interface CertificatePreviewProps {
   onOpen: () => void;
 }
 
-function CertificatePreview({ onOpen }: CertificatePreviewProps) {
-  return (
-    <PdfThumb onClick={onOpen}>
-      <CertificateImage
-        src={EDUCATION_RESOURCES.educationImage}
-        alt={EDUCATION_TEXT.certificateAlt}
-      />
-      <IconWrapper className="magnify-icon">
-        <ZoomInSharp />
-      </IconWrapper>
-    </PdfThumb>
-  );
-}
+const CertificatePreview = ({ onOpen }: CertificatePreviewProps) => (
+  <PdfThumb onClick={onOpen}>
+    <CertificateImage
+      src={EDUCATION_RESOURCES.educationImage}
+      alt={EDUCATION_TEXT.certificateAlt}
+    />
+    <IconWrapper className="magnify-icon">
+      <ZoomInSharp />
+    </IconWrapper>
+  </PdfThumb>
+);
 
-interface ModalProps {
+// Компонент модального окна
+interface CertificateModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-function CertificateModal({ isOpen, onClose }: ModalProps) {
+const CertificateModal = ({ isOpen, onClose }: CertificateModalProps) => {
   if (!isOpen) return null;
 
   return (
@@ -48,36 +47,33 @@ function CertificateModal({ isOpen, onClose }: ModalProps) {
       </ModalContent>
     </Modal>
   );
-}
+};
 
-function EducationDescription() {
-  return (
-    <Description>
-      {EDUCATION_TEXT.paragraphs.map((paragraph, index) => {
-        if (index === 2) {
-          return (
-            <p key={index}>
-              Весной 2025 года завершила обучение в «Школе дизайнеров» Бюро
-              Горбунова, остановившись на{" "}
-              <Link href={EDUCATION_RESOURCES.bureauLink} className="highlight">
-                {EDUCATION_TEXT.linkText}
-              </Link>
-              {" (посмотреть можно в самом низу страницы)"}. До обучения
-              смотрела на дизайн-макеты только со стороны разработчика.
-            </p>
-          );
-        }
-        return <p key={index}>{paragraph}</p>;
-      })}
-    </Description>
-  );
-}
+// Компонент описания образования
+const EducationDescription = () => (
+  <Description>
+    {EDUCATION_TEXT.paragraphs.map((paragraph, index) => {
+      if (index === 2) {
+        return (
+          <p key={index}>
+            Весной 2025 года завершила обучение в «Школе дизайнеров» Бюро
+            Горбунова, остановившись на{" "}
+            <Link href={EDUCATION_RESOURCES.bureauLink} className="highlight">
+              {EDUCATION_TEXT.linkText}
+            </Link>
+            {" (посмотреть можно в самом низу страницы)"}. До обучения смотрела
+            на дизайн-макеты только со стороны разработчика.
+          </p>
+        );
+      }
+      return <p key={index}>{paragraph}</p>;
+    })}
+  </Description>
+);
 
+// Основной компонент страницы
 export function EducationPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
+  const { isOpen, openModal, closeModal } = useModal();
 
   return (
     <Root>
@@ -85,8 +81,8 @@ export function EducationPage() {
       <Content>
         <Title variant="h1">{EDUCATION_TEXT.title}</Title>
         <EducationDescription />
-        <CertificatePreview onOpen={handleOpenModal} />
-        <CertificateModal isOpen={isModalOpen} onClose={handleCloseModal} />
+        <CertificatePreview onOpen={openModal} />
+        <CertificateModal isOpen={isOpen} onClose={closeModal} />
       </Content>
     </Root>
   );
@@ -126,6 +122,11 @@ const Description = styled("div")({
 
   "& .highlight": {
     color: "#4d7cef",
+    textDecoration: "none",
+
+    "&:hover": {
+      textDecoration: "underline",
+    },
   },
 });
 
