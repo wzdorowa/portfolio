@@ -16,6 +16,7 @@ export const ProjectNotFound: FC<ProjectNotFoundProps> = ({ onBackClick }) => {
           text={
             PROJECT_PAGE_CONSTANTS.ERROR_MESSAGES.PROJECT_NOT_FOUND_DESCRIPTION
           }
+          isEducational={false}
           withBackButton={true}
           onBackClick={onBackClick}
         />
