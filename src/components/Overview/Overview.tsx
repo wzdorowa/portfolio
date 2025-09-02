@@ -8,6 +8,7 @@ import { OverviewLayout } from "./OverviewLayout";
 
 interface OverviewProps {
   title: ReactNode;
+  isEducational: boolean;
   text: ReactNode;
   withBackButton?: boolean;
   onBackClick?: () => void;
@@ -19,6 +20,7 @@ interface OverviewProps {
  */
 export const Overview: FC<OverviewProps> = ({
   title,
+  isEducational,
   text,
   withBackButton = false,
   onBackClick,
@@ -26,7 +28,7 @@ export const Overview: FC<OverviewProps> = ({
   return (
     <OverviewLayout>
       <Header />
-      <Hero title={title} text={text} />
+      <Hero title={title} isEducational={isEducational} text={text} />
       <OverviewFooter
         withBackButton={withBackButton}
         onBackClick={onBackClick}

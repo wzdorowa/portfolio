@@ -43,6 +43,7 @@ export function ProjectPage({ projectData, onBackClick }: ProjectPageProps) {
       <ContentSection>
         <Overview
           title={projectData.title}
+          isEducational={projectData.isEducational}
           text={<ProjectContent projectData={projectData} />}
           withBackButton={true}
           onBackClick={handleBackClick}

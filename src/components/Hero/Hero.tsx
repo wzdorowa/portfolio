@@ -11,6 +11,7 @@ import { HERO_CONSTANTS } from "./constants";
 interface HeroProps {
   /** Заголовок секции */
   title: string | ReactNode;
+  isEducational: boolean;
   /** Основной текст */
   text: string | ReactNode;
 }
@@ -19,12 +20,15 @@ interface HeroProps {
  * Компонент Hero секции
  * Отображает основную информацию с заголовком и текстом с поддержкой скролла
  */
-export const Hero: FC<HeroProps> = ({ title, text }) => {
+export const Hero: FC<HeroProps> = ({ title, isEducational, text }) => {
   const { scrollRef, scrollContainerClass } = useScrollShadow(text);
 
   return (
     <HeroWrapper>
-      <HeroTitle>{title}</HeroTitle>
+      <HeroTitleWrapper>
+        <HeroTitle>{title}</HeroTitle>
+        {isEducational && <Note>Работа в рамках обучения</Note>}
+      </HeroTitleWrapper>
 
       <Content>
         <ScrollShadowContainer className={scrollContainerClass}>
@@ -41,6 +45,16 @@ const HeroWrapper = styled("div")({
   flexDirection: "column",
   gap: HERO_CONSTANTS.CONTENT_GAP,
   minHeight: 0, // Позволяет flex-элементу сжиматься меньше своего контента
+});
+
+const HeroTitleWrapper = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  gap: 32,
+});
+
+const Note = styled("span")({
+  fontStyle: "italic",
 });
 
 const Content = styled("div")({
