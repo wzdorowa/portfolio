@@ -23,7 +23,7 @@ export const PORTFOLIO_ITEMS: readonly PortfolioItem[] = [
     alt: "Apostro lending",
   },
   {
-    id: "murnorka",
+    id: "murnorka-landing",
     image: "/images/portfolio/murnorka.png",
     alt: "Мурнорка (Промостраница коллекции)",
   },
