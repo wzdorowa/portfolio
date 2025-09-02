@@ -1,6 +1,10 @@
-import { ProjectPage } from "@/src/page-components";
-import { PROJECT_DATA } from "@/src/data/projectData";
+import {
+  ProjectPage,
+  getProjectData,
+  getAllProjectIds,
+} from "@/src/page-components";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 interface ProjectPageRouteProps {
   params: {
@@ -10,16 +14,14 @@ interface ProjectPageRouteProps {
 
 // Генерируем статические параметры для всех проектов
 export async function generateStaticParams() {
-  return PROJECT_DATA.map((project) => ({
-    id: project.id,
-  }));
+  return getAllProjectIds().map((id) => ({ id }));
 }
 
 // Генерируем метаданные для SEO
 export async function generateMetadata({
   params,
 }: ProjectPageRouteProps): Promise<Metadata> {
-  const project = PROJECT_DATA.find((p) => p.id === params.id);
+  const project = getProjectData(params.id);
 
   if (!project) {
     return {
@@ -35,5 +37,14 @@ export async function generateMetadata({
 }
 
 export default function ProjectPageRoute({ params }: ProjectPageRouteProps) {
-  return <ProjectPage projectId={params.id} />;
+  // Получаем данные проекта на уровне сервера
+  const projectData = getProjectData(params.id);
+
+  // Если проект не найден, показываем 404
+  if (!projectData) {
+    notFound();
+  }
+
+  // Передаем данные проекта в компонент
+  return <ProjectPage projectData={projectData} />;
 }
