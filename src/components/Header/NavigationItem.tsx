@@ -20,7 +20,7 @@ export const NavigationItemComponent: FC<{
         <Typography variant="body1">{item.label}</Typography>
       </NavigationText>
     ) : (
-      <NavigationLink href={item.href}>
+      <NavigationLink $textColor={textColor} href={item.href}>
         <Typography variant="body1">{item.label}</Typography>
       </NavigationLink>
     )}
@@ -36,15 +36,17 @@ const NavigationItemContainer = styled("div")<NavigationItemProps>({
   gap: 6,
 });
 
-const NavigationLink = styled(Link)({
-  textDecoration: "none",
-  color: "inherit",
-  transition: "color 0.2s ease",
+const NavigationLink = styled(Link)<{ $textColor?: TextColor }>(
+  ({ $textColor }) => ({
+    textDecoration: "none",
+    color: "inherit",
+    transition: "color 0.2s ease",
 
-  "&:hover": {
-    color: "#4e64d5",
-  },
-});
+    "&:hover": {
+      color: $textColor === "white" ? "#ffffff75" : "#4e64d5",
+    },
+  })
+);
 
 const NavigationText = styled("span")({
   color: "inherit",

@@ -61,7 +61,7 @@ const ContactLink = styled("a")({
   gap: 8,
 
   "&:hover": {
-    opacity: 0.8,
+    opacity: 0.7,
     transition: "opacity 0.2s ease",
   },
 });

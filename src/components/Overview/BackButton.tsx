@@ -30,7 +30,7 @@ const BackButtonContainer = styled("button")({
   color: "inherit",
 
   "&:hover": {
-    opacity: 0.8,
+    opacity: 0.5,
     transition: "opacity 0.2s ease",
   },
 
