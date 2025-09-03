@@ -1,4 +1,6 @@
 // Types
+import { TextColor } from "../types/common";
+
 export interface ProjectWorkSection {
   title: string;
   subtitle?: string;
@@ -14,7 +16,7 @@ export interface ProjectContent {
 export interface ProjectData {
   id: string;
   backgroundColor?: string;
-  textColor?: "white" | "black";
+  textColor?: TextColor;
   title: string;
   isEducational: boolean;
   image: string;

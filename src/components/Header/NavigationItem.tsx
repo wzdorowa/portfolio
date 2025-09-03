@@ -3,6 +3,7 @@ import { Typography } from "@mui/material";
 import { styled } from "@mui/material";
 import Link from "next/link";
 import { NavigationItem, NavigationItemProps } from "./types";
+import { TextColor } from "../../types/common";
 
 /**
  * Компонент элемента навигации
@@ -11,7 +12,7 @@ export const NavigationItemComponent: FC<{
   item: NavigationItem;
   isActive: boolean;
   isExactMatch: boolean;
-  textColor?: "white" | "black";
+  textColor?: TextColor;
 }> = ({ item, isActive, isExactMatch, textColor = "black" }) => (
   <NavigationItemContainer $isActive={isActive}>
     {isExactMatch ? (
@@ -51,7 +52,7 @@ const NavigationText = styled("span")({
 });
 
 const ActiveIndicator = styled("div")<
-  NavigationItemProps & { $textColor?: "white" | "black" }
+  NavigationItemProps & { $textColor?: TextColor }
 >(({ $isActive, $textColor }) => ({
   width: 24,
   height: 2,

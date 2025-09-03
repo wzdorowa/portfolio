@@ -5,6 +5,7 @@ import { Header } from "../Header";
 import { Hero } from "../Hero";
 import { OverviewFooter } from "./OverviewFooter";
 import { OverviewLayout } from "./OverviewLayout";
+import { TextColor } from "../../types/common";
 
 interface OverviewProps {
   title: ReactNode;
@@ -13,7 +14,7 @@ interface OverviewProps {
   withBackButton?: boolean;
   onBackClick?: () => void;
   backgroundColor?: string;
-  textColor?: "white" | "black";
+  textColor?: TextColor;
 }
 
 /**

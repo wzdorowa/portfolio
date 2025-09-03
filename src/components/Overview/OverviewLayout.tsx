@@ -1,16 +1,17 @@
 import { FC } from "react";
 import { styled } from "@mui/material";
+import { TextColor } from "../../types/common";
 
 interface OverviewLayoutProps {
   children: React.ReactNode;
   className?: string;
   backgroundColor?: string;
-  textColor?: "black" | "white";
+  textColor?: TextColor;
 }
 
 interface ContainerProps {
   $backgroundColor?: string;
-  $textColor?: "black" | "white";
+  $textColor?: TextColor;
 }
 
 /**
