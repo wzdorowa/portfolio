@@ -1,6 +1,5 @@
 import { FC, ReactNode } from "react";
 import { styled } from "@mui/material";
-import { HERO_CONSTANTS } from "./constants";
 
 interface ScrollShadowContainerProps {
   children: ReactNode;
@@ -24,13 +23,13 @@ const StyledContainer = styled("div")({
     top: 0,
     left: 0,
     right: 0,
-    height: HERO_CONSTANTS.SHADOW_HEIGHT,
+    height: 20,
     background:
       "linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",
     zIndex: 1,
     pointerEvents: "none",
     opacity: 0,
-    transition: HERO_CONSTANTS.SHADOW_TRANSITION,
+    transition: "opacity 0.2s ease",
   },
 
   // Нижняя тень при скролле
@@ -40,13 +39,13 @@ const StyledContainer = styled("div")({
     bottom: 0,
     left: 0,
     right: 0,
-    height: HERO_CONSTANTS.SHADOW_HEIGHT,
+    height: 20,
     background:
       "linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",
     zIndex: 1,
     pointerEvents: "none",
     opacity: 0,
-    transition: HERO_CONSTANTS.SHADOW_TRANSITION,
+    transition: "opacity 0.2s ease",
   },
 
   // Показываем тени при скролле

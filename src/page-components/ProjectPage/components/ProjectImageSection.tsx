@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { styled } from "@mui/material";
 import Image from "next/image";
-import { PROJECT_PAGE_CONSTANTS } from "../constants";
 
 interface ProjectImageSectionProps {
   src: string;
@@ -17,9 +16,9 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
       <ProjectImage
         src={src}
         alt={alt}
-        width={PROJECT_PAGE_CONSTANTS.IMAGE.DEFAULT_WIDTH}
-        height={PROJECT_PAGE_CONSTANTS.IMAGE.DEFAULT_HEIGHT}
-        sizes={PROJECT_PAGE_CONSTANTS.IMAGE.SIZES}
+        width={1200}
+        height={800}
+        sizes="(max-width: 1920px) 100vw, 1250px"
         style={{
           width: "100%",
           height: "auto",
@@ -39,17 +38,17 @@ const ImageSection = styled("div")({
 
   // Стили для скроллбара
   "&::-webkit-scrollbar": {
-    width: PROJECT_PAGE_CONSTANTS.SCROLLBAR.WIDTH,
+    width: 8,
   },
   "&::-webkit-scrollbar-track": {
     background: "transparent",
   },
   "&::-webkit-scrollbar-thumb": {
-    background: PROJECT_PAGE_CONSTANTS.SCROLLBAR.THUMB_COLOR,
-    borderRadius: PROJECT_PAGE_CONSTANTS.SCROLLBAR.BORDER_RADIUS,
+    background: "rgba(0, 0, 0, 0.2)",
+    borderRadius: 4,
   },
   "&::-webkit-scrollbar-thumb:hover": {
-    background: PROJECT_PAGE_CONSTANTS.SCROLLBAR.THUMB_HOVER_COLOR,
+    background: "rgba(0, 0, 0, 0.3)",
   },
 });
 

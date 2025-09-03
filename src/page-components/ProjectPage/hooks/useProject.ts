@@ -1,10 +1,8 @@
 import { useMemo } from "react";
 import { PROJECT_DATA } from "@/src/data";
-import { PROJECT_PAGE_CONSTANTS } from "../constants";
 
 export const useProject = (projectId?: string) => {
-  const currentProjectId =
-    projectId || PROJECT_PAGE_CONSTANTS.DEFAULT_PROJECT_ID;
+  const currentProjectId = projectId || "crypto-landing";
 
   const projectData = useMemo(() => {
     return PROJECT_DATA.find((project) => project.id === currentProjectId);

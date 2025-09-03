@@ -2,7 +2,6 @@ import { FC } from "react";
 import { styled, Typography } from "@mui/material";
 import EmailIcon from "@mui/icons-material/EmailSharp";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import { OVERVIEW_CONSTANTS } from "./constants";
 
 interface ContactInfo {
   email?: string;
@@ -18,10 +17,10 @@ interface ContactsProps {
 
 export const Contacts: FC<ContactsProps> = ({
   contacts = {
-    email: OVERVIEW_CONSTANTS.CONTACTS.EMAIL,
+    email: "w.zdorowa@gmail.com",
     telegram: {
-      url: OVERVIEW_CONSTANTS.CONTACTS.TELEGRAM,
-      handle: OVERVIEW_CONSTANTS.CONTACTS.TELEGRAM_HANDLE,
+      url: "https://t.me/zdorova_veronika",
+      handle: "@zdorova_veronika",
     },
   },
 }) => {
@@ -50,16 +49,16 @@ export const Contacts: FC<ContactsProps> = ({
 
 const ContactsWrapper = styled("div")({
   display: "flex",
-  gap: OVERVIEW_CONSTANTS.CONTACTS.GAP,
+  gap: 16,
   flexShrink: 0, // Не сжимается
 });
 
 const ContactLink = styled("a")({
-  color: OVERVIEW_CONSTANTS.CONTACTS.COLOR,
+  color: "#4e64d5",
   textDecoration: "none",
   display: "flex",
   alignItems: "center",
-  gap: OVERVIEW_CONSTANTS.CONTACTS.ICON_GAP,
+  gap: 8,
 
   "&:hover": {
     opacity: 0.8,

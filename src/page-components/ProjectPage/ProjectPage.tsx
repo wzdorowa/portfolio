@@ -9,7 +9,6 @@ import {
   ProjectImageSection,
   ProjectNotFound,
 } from "./components";
-import { PROJECT_PAGE_CONSTANTS } from "./constants";
 
 /**
  * ProjectPage - шаблонный компонент для отображения страницы проекта
@@ -58,12 +57,12 @@ export function ProjectPage({ projectData, onBackClick }: ProjectPageProps) {
 // Styled Components
 const Root = styled("div")({
   display: "flex",
-  minHeight: PROJECT_PAGE_CONSTANTS.LAYOUT.MIN_HEIGHT,
-  backgroundColor: PROJECT_PAGE_CONSTANTS.LAYOUT.BACKGROUND_COLOR,
+  minHeight: "100vh",
+  backgroundColor: "#ffffff",
 });
 
 const ContentSection = styled("div")({
   position: "relative",
   height: "100vh",
-  backgroundColor: PROJECT_PAGE_CONSTANTS.LAYOUT.BACKGROUND_COLOR,
+  backgroundColor: "#ffffff",
 });

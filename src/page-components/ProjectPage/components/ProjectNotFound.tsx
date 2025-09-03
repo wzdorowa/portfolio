@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { styled } from "@mui/material";
 import { Overview } from "@/src/components";
-import { PROJECT_PAGE_CONSTANTS } from "../constants";
 
 interface ProjectNotFoundProps {
   onBackClick: () => void;
@@ -12,10 +11,8 @@ export const ProjectNotFound: FC<ProjectNotFoundProps> = ({ onBackClick }) => {
     <Root>
       <ContentSection>
         <Overview
-          title={PROJECT_PAGE_CONSTANTS.ERROR_MESSAGES.PROJECT_NOT_FOUND}
-          text={
-            PROJECT_PAGE_CONSTANTS.ERROR_MESSAGES.PROJECT_NOT_FOUND_DESCRIPTION
-          }
+          title="Проект не найден"
+          text="К сожалению, запрашиваемый проект не найден в портфолио."
           isEducational={false}
           withBackButton={true}
           onBackClick={onBackClick}
@@ -27,12 +24,12 @@ export const ProjectNotFound: FC<ProjectNotFoundProps> = ({ onBackClick }) => {
 
 const Root = styled("div")({
   display: "flex",
-  minHeight: PROJECT_PAGE_CONSTANTS.LAYOUT.MIN_HEIGHT,
-  backgroundColor: PROJECT_PAGE_CONSTANTS.LAYOUT.BACKGROUND_COLOR,
+  minHeight: "100vh",
+  backgroundColor: "#ffffff",
 });
 
 const ContentSection = styled("div")({
   position: "relative",
   height: "100vh",
-  backgroundColor: PROJECT_PAGE_CONSTANTS.LAYOUT.BACKGROUND_COLOR,
+  backgroundColor: "#ffffff",
 });

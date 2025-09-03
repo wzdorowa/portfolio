@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { usePathname } from "next/navigation";
 import { styled } from "@mui/material";
-import { NAVIGATION_ITEMS, HEADER_CONSTANTS } from "./constants";
+import { NAVIGATION_ITEMS } from "./constants";
 import { NavigationItemComponent } from "./NavigationItem";
 import { isActivePage } from "./utils";
 
@@ -35,5 +35,5 @@ const HeaderContainer = styled("div")({
 
 const Navigation = styled("nav")({
   display: "flex",
-  gap: HEADER_CONSTANTS.NAVIGATION_GAP,
+  gap: 24,
 });

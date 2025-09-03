@@ -6,7 +6,6 @@ import { useScrollShadow } from "../../hooks/useScrollShadow";
 import { HeroTitle } from "./HeroTitle";
 import { ScrollableText } from "./ScrollableText";
 import { ScrollShadowContainer } from "./ScrollShadowContainer";
-import { HERO_CONSTANTS } from "./constants";
 
 interface HeroProps {
   /** Заголовок секции */
@@ -43,7 +42,7 @@ const HeroWrapper = styled("div")({
   flex: 1, // Занимает всю доступную высоту в Overview
   display: "flex",
   flexDirection: "column",
-  gap: HERO_CONSTANTS.CONTENT_GAP,
+  gap: 72,
   minHeight: 0, // Позволяет flex-элементу сжиматься меньше своего контента
 });
 
@@ -59,7 +58,7 @@ const Note = styled("span")({
 
 const Content = styled("div")({
   flex: 1, // Занимает оставшуюся высоту после заголовка
-  maxWidth: HERO_CONSTANTS.CONTENT_MAX_WIDTH,
+  maxWidth: 450,
   display: "flex",
   flexDirection: "column",
   minHeight: 0, // Позволяет сжиматься

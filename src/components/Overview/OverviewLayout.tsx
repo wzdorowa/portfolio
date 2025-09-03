@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { styled } from "@mui/material";
-import { OVERVIEW_CONSTANTS } from "./constants";
 
 interface OverviewLayoutProps {
   children: React.ReactNode;
@@ -23,14 +22,14 @@ const Container = styled("div")({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
-  gap: OVERVIEW_CONSTANTS.LAYOUT.GAP,
-  padding: OVERVIEW_CONSTANTS.LAYOUT.PADDING_DESKTOP,
-  minWidth: OVERVIEW_CONSTANTS.LAYOUT.MIN_WIDTH,
-  maxWidth: OVERVIEW_CONSTANTS.LAYOUT.MAX_WIDTH,
-  height: OVERVIEW_CONSTANTS.LAYOUT.HEIGHT,
+  gap: 125,
+  padding: "40px 32px 80px 64px",
+  minWidth: 580,
+  maxWidth: 600,
+  height: "100vh",
   boxSizing: "border-box",
 
-  [`@media (max-width: ${OVERVIEW_CONSTANTS.BREAKPOINTS.MOBILE})`]: {
-    padding: OVERVIEW_CONSTANTS.LAYOUT.PADDING_MOBILE,
+  "@media (max-width: 768px)": {
+    padding: "24px 16px 40px",
   },
 });
