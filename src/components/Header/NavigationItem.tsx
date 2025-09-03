@@ -4,14 +4,6 @@ import { styled } from "@mui/material";
 import Link from "next/link";
 import { NavigationItem, NavigationItemProps } from "./types";
 
-const ActiveIndicator = styled("div")<NavigationItemProps>(({ $isActive }) => ({
-  width: 24,
-  height: 2,
-  backgroundColor: $isActive ? "#4e64d5" : "transparent",
-  borderRadius: 1,
-  transition: "background-color 0.2s ease",
-}));
-
 /**
  * Компонент элемента навигации
  */
@@ -19,7 +11,8 @@ export const NavigationItemComponent: FC<{
   item: NavigationItem;
   isActive: boolean;
   isExactMatch: boolean;
-}> = ({ item, isActive, isExactMatch }) => (
+  textColor?: "white" | "black";
+}> = ({ item, isActive, isExactMatch, textColor = "black" }) => (
   <NavigationItemContainer $isActive={isActive}>
     {isExactMatch ? (
       <NavigationText>
@@ -30,7 +23,7 @@ export const NavigationItemComponent: FC<{
         <Typography variant="body1">{item.label}</Typography>
       </NavigationLink>
     )}
-    <ActiveIndicator $isActive={isActive} />
+    <ActiveIndicator $isActive={isActive} $textColor={textColor} />
   </NavigationItemContainer>
 );
 
@@ -56,3 +49,17 @@ const NavigationText = styled("span")({
   color: "inherit",
   cursor: "default",
 });
+
+const ActiveIndicator = styled("div")<
+  NavigationItemProps & { $textColor?: "white" | "black" }
+>(({ $isActive, $textColor }) => ({
+  width: 24,
+  height: 2,
+  backgroundColor: $isActive
+    ? $textColor === "white"
+      ? "white"
+      : "#4e64d5"
+    : "transparent",
+  borderRadius: 1,
+  transition: "background-color 0.2s ease",
+}));

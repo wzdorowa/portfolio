@@ -7,11 +7,15 @@ import { NAVIGATION_ITEMS } from "./constants";
 import { NavigationItemComponent } from "./NavigationItem";
 import { isActivePage, isExactMatch } from "./utils";
 
+interface HeaderProps {
+  textColor?: "white" | "black";
+}
+
 /**
  * Компонент заголовка
  * Отображает навигационное меню в верхней части страницы
  */
-export const Header: FC = () => {
+export const Header: FC<HeaderProps> = ({ textColor = "black" }) => {
   const pathname = usePathname();
 
   return (
@@ -23,6 +27,7 @@ export const Header: FC = () => {
             item={item}
             isActive={isActivePage(pathname, item.href)}
             isExactMatch={isExactMatch(pathname, item.href)}
+            textColor={textColor}
           />
         ))}
       </Navigation>

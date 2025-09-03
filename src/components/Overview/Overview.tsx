@@ -31,7 +31,7 @@ export const Overview: FC<OverviewProps> = ({
 }) => {
   return (
     <OverviewLayout backgroundColor={backgroundColor} textColor={textColor}>
-      <Header />
+      <Header textColor={textColor} />
       <Hero
         title={title}
         isEducational={isEducational}
