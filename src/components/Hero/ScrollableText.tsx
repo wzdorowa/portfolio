@@ -24,6 +24,7 @@ const StyledText = styled("div")({
   width: "100%",
   overflowY: "auto",
   paddingRight: 12,
+  color: "inherit",
 
   // Стили для скроллбара
   "&::-webkit-scrollbar": {

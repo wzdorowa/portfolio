@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { styled } from "@mui/material";
 import { NAVIGATION_ITEMS } from "./constants";
 import { NavigationItemComponent } from "./NavigationItem";
-import { isActivePage } from "./utils";
+import { isActivePage, isExactMatch } from "./utils";
 
 /**
  * Компонент заголовка
@@ -22,6 +22,7 @@ export const Header: FC = () => {
             key={item.href}
             item={item}
             isActive={isActivePage(pathname, item.href)}
+            isExactMatch={isExactMatch(pathname, item.href)}
           />
         ))}
       </Navigation>

@@ -27,16 +27,11 @@ const BackButtonContainer = styled("button")({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  color: "inherit",
 
   "&:hover": {
     opacity: 0.8,
     transition: "opacity 0.2s ease",
-  },
-
-  "&:focus": {
-    outline: "2px solid #4e64d5",
-    outlineOffset: "2px",
-    borderRadius: "4px",
   },
 
   "&:active": {

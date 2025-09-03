@@ -22,7 +22,7 @@ export const EducationLayout = ({ children }: EducationLayoutProps) => (
 const Root = styled("div")({
   background: "#fff",
   minHeight: "100vh",
-  margin: "0 64px",
+  margin: "40px 64px 80px 64px",
   display: "flex",
   flexDirection: "column",
   gap: 125,

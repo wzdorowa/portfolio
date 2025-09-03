@@ -13,4 +13,5 @@ const StyledTitle = styled(Typography)({
   fontSize: "4.5rem",
   lineHeight: 1.15,
   flexShrink: 0, // Не сжимается
+  color: "inherit",
 });

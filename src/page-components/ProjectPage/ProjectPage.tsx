@@ -41,6 +41,8 @@ export function ProjectPage({ projectData, onBackClick }: ProjectPageProps) {
     <Root>
       <ContentSection>
         <Overview
+          backgroundColor={projectData.backgroundColor}
+          textColor={projectData.textColor}
           title={projectData.title}
           isEducational={projectData.isEducational}
           text={<ProjectContent projectData={projectData} />}

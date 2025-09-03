@@ -14,7 +14,7 @@ export const EXPERIENCE_DATA: readonly ExperienceData[] = [
     id: 1,
     period: "Март 2023 — Февраль 2025",
     position: "Frontend-разработчик",
-    company: "Решейп",
+    company: "Apostro",
     stack:
       "Стек технологий: TypeScript, Next, React, React Router, styled-components, RxJS.",
     description: `Помогала поддерживать и обновлять существующую кодовую базу по фронтенду.

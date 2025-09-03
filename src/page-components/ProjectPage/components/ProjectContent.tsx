@@ -45,6 +45,6 @@ const ContentText = styled("div")({
   flexDirection: "column",
   fontSize: 16,
   lineHeight: 1.7,
-  color: "#000",
+  color: "inherit",
   width: 435,
 });

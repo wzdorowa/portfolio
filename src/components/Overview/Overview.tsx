@@ -12,6 +12,8 @@ interface OverviewProps {
   text: ReactNode;
   withBackButton?: boolean;
   onBackClick?: () => void;
+  backgroundColor?: string;
+  textColor?: "white" | "black";
 }
 
 /**
@@ -24,11 +26,18 @@ export const Overview: FC<OverviewProps> = ({
   text,
   withBackButton = false,
   onBackClick,
+  backgroundColor,
+  textColor = "black",
 }) => {
   return (
-    <OverviewLayout>
+    <OverviewLayout backgroundColor={backgroundColor} textColor={textColor}>
       <Header />
-      <Hero title={title} isEducational={isEducational} text={text} />
+      <Hero
+        title={title}
+        isEducational={isEducational}
+        text={text}
+        backgroundColor={backgroundColor}
+      />
       <OverviewFooter
         withBackButton={withBackButton}
         onBackClick={onBackClick}

@@ -18,11 +18,18 @@ const ActiveIndicator = styled("div")<NavigationItemProps>(({ $isActive }) => ({
 export const NavigationItemComponent: FC<{
   item: NavigationItem;
   isActive: boolean;
-}> = ({ item, isActive }) => (
+  isExactMatch: boolean;
+}> = ({ item, isActive, isExactMatch }) => (
   <NavigationItemContainer $isActive={isActive}>
-    <NavigationLink href={item.href}>
-      <Typography variant="body1">{item.label}</Typography>
-    </NavigationLink>
+    {isExactMatch ? (
+      <NavigationText>
+        <Typography variant="body1">{item.label}</Typography>
+      </NavigationText>
+    ) : (
+      <NavigationLink href={item.href}>
+        <Typography variant="body1">{item.label}</Typography>
+      </NavigationLink>
+    )}
     <ActiveIndicator $isActive={isActive} />
   </NavigationItemContainer>
 );
@@ -38,15 +45,14 @@ const NavigationItemContainer = styled("div")<NavigationItemProps>({
 const NavigationLink = styled(Link)({
   textDecoration: "none",
   color: "inherit",
-  transition: "opacity 0.2s ease",
+  transition: "color 0.2s ease",
 
   "&:hover": {
-    opacity: 0.7,
+    color: "#4e64d5",
   },
+});
 
-  "&:focus": {
-    outline: "2px solid #4e64d5",
-    outlineOffset: "2px",
-    borderRadius: "4px",
-  },
+const NavigationText = styled("span")({
+  color: "inherit",
+  cursor: "default",
 });

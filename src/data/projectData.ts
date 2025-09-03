@@ -13,6 +13,8 @@ export interface ProjectContent {
 
 export interface ProjectData {
   id: string;
+  backgroundColor?: string;
+  textColor?: "white" | "black";
   title: string;
   isEducational: boolean;
   image: string;
@@ -79,6 +81,8 @@ export const PROJECT_DATA: readonly ProjectData[] = [
   },
   {
     id: "murnorka-landing",
+    backgroundColor: "#000000",
+    textColor: "white",
     title: "Много-этажная страница",
     isEducational: true,
     image: "/images/portfolio/murnorka.png",
@@ -170,7 +174,9 @@ export const PROJECT_DATA: readonly ProjectData[] = [
   },
   {
     id: "vaults-admin-panel",
-    title: "Панель ассет-менеджмента",
+    backgroundColor: "#579D9E",
+    textColor: "white",
+    title: "Панель управления крипто-активами",
     isEducational: false,
     image: "/images/portfolio/vaults-admin-panel-project.png",
     content: {
@@ -220,6 +226,8 @@ export const PROJECT_DATA: readonly ProjectData[] = [
   },
   {
     id: "dostavka",
+    backgroundColor: "#53C03A",
+    textColor: "white",
     title: "Сервис доставки",
     isEducational: true,
     image: "/images/portfolio/dostavka.png",
@@ -273,6 +281,8 @@ export const PROJECT_DATA: readonly ProjectData[] = [
   },
   {
     id: "bitzevskaya-fabrica",
+    backgroundColor: "#000000",
+    textColor: "white",
     title: "Редизайн главной страницы",
     isEducational: true,
     image: "/images/portfolio/bitzevskaya-fabrica.png",
@@ -390,6 +400,8 @@ export const PROJECT_DATA: readonly ProjectData[] = [
   },
   {
     id: "documents",
+    backgroundColor: "#4D7CEF",
+    textColor: "white",
     title: "Мобильное приложение",
     isEducational: true,
     image: "/images/portfolio/documents.png",

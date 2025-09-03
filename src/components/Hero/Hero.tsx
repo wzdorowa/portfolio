@@ -13,13 +13,20 @@ interface HeroProps {
   isEducational: boolean;
   /** Основной текст */
   text: string | ReactNode;
+  /** Цвет фона для scroll shadow */
+  backgroundColor?: string;
 }
 
 /**
  * Компонент Hero секции
  * Отображает основную информацию с заголовком и текстом с поддержкой скролла
  */
-export const Hero: FC<HeroProps> = ({ title, isEducational, text }) => {
+export const Hero: FC<HeroProps> = ({
+  title,
+  isEducational,
+  text,
+  backgroundColor,
+}) => {
   const { scrollRef, scrollContainerClass } = useScrollShadow(text);
 
   return (
@@ -30,7 +37,10 @@ export const Hero: FC<HeroProps> = ({ title, isEducational, text }) => {
       </HeroTitleWrapper>
 
       <Content>
-        <ScrollShadowContainer className={scrollContainerClass}>
+        <ScrollShadowContainer
+          className={scrollContainerClass}
+          backgroundColor={backgroundColor}
+        >
           <ScrollableText scrollRef={scrollRef}>{text}</ScrollableText>
         </ScrollShadowContainer>
       </Content>
@@ -44,6 +54,7 @@ const HeroWrapper = styled("div")({
   flexDirection: "column",
   gap: 72,
   minHeight: 0, // Позволяет flex-элементу сжиматься меньше своего контента
+  color: "inherit",
 });
 
 const HeroTitleWrapper = styled("div")({
