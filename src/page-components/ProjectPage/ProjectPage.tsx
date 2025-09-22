@@ -2,7 +2,6 @@
 
 import React from "react";
 import { styled } from "@mui/material";
-import { Overview } from "@/src/components";
 import { ProjectData } from "@/src/data";
 import {
   ProjectContent,
