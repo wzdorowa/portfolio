@@ -168,10 +168,17 @@ const ExpandIcon = styled("div")<{ isExpanded: boolean }>(({ isExpanded }) => ({
 }));
 
 const DescriptionContent = styled("div")({
-  fontSize: 16,
+  fontSize: "1rem",
   lineHeight: 1.7,
   color: "#000",
   whiteSpace: "pre-wrap",
+
+  "@media (max-width: 768px)": {
+    fontSize: "0.88rem",
+  },
+  "@media (max-width: 480px)": {
+    fontSize: "0.8rem",
+  },
 
   "& p": {
     margin: "0 0 12px 0",

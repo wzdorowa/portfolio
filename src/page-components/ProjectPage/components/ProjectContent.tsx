@@ -43,8 +43,18 @@ const ProjectContentWrapper = styled("div")({
 const ContentText = styled("div")({
   display: "flex",
   flexDirection: "column",
-  fontSize: 16,
+  fontSize: "1rem",
   lineHeight: 1.7,
   color: "inherit",
   width: 435,
+
+  "@media (max-width: 1280px)": {
+    width: "100%",
+  },
+  "@media (max-width: 768px)": {
+    fontSize: "0.88rem",
+  },
+  "@media (max-width: 480px)": {
+    fontSize: "0.8rem",
+  },
 });

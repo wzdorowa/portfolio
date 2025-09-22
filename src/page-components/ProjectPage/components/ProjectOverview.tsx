@@ -32,13 +32,18 @@ export const ProjectOverview: FC<ProjectOverviewProps> = ({
   return (
     <Root $backgroundColor={backgroundColor} $textColor={textColor}>
       <Header textColor={textColor} />
-      <Hero
-        title={title}
-        isEducational={isEducational}
-        text={text}
-        backgroundColor={backgroundColor}
-      />
-      <BackButton onClick={onBackClick} />
+      <HeroBox>
+        <Hero
+          title={title}
+          isEducational={isEducational}
+          text={text}
+          backgroundColor={backgroundColor}
+          textColor={textColor}
+        />
+      </HeroBox>
+      <ButtonBox>
+        <BackButton onClick={onBackClick} />
+      </ButtonBox>
     </Root>
   );
 };
@@ -51,7 +56,6 @@ const Root = styled("div")<{
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
-  gap: 125,
   padding: "42px 64px 80px",
   minWidth: 580,
   maxWidth: 600,
@@ -60,7 +64,46 @@ const Root = styled("div")<{
   backgroundColor: $backgroundColor || "transparent",
   color: $textColor || "inherit",
 
+  "@media (max-width: 1280px)": {
+    padding: "24px 128px 40px 64px",
+    minWidth: "auto",
+    maxWidth: "100%",
+    height: "100%",
+  },
+
   "@media (max-width: 768px)": {
-    padding: "24px 16px 40px",
+    padding: "24px 48px 40px 32px",
+  },
+  "@media (max-width: 480px)": {
+    padding: "16px 32px 24px 16px",
   },
 }));
+
+const HeroBox = styled("div")({
+  marginTop: 125,
+  minHeight: 0,
+
+  "@media (max-width: 1280px)": {
+    marginTop: 100,
+  },
+  "@media (max-width: 768px)": {
+    marginTop: 64,
+  },
+  "@media (max-width: 480px)": {
+    marginTop: 48,
+  },
+});
+
+const ButtonBox = styled("div")({
+  marginTop: 125,
+
+  "@media (max-width: 1280px)": {
+    marginTop: 64,
+  },
+  "@media (max-width: 768px)": {
+    marginTop: 32,
+  },
+  "@media (max-width: 480px)": {
+    marginTop: 24,
+  },
+});

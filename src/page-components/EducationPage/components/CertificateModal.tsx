@@ -69,6 +69,14 @@ const CloseButton = styled("button")({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+
+  "@media (max-width: 768px)": {
+    fontSize: "0.88rem",
+  },
+  "@media (max-width: 480px)": {
+    fontSize: "0.8rem",
+  },
+
   "&:hover": {
     backgroundColor: "rgba(0,0,0,0.7)",
   },

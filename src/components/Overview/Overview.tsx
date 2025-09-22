@@ -64,12 +64,24 @@ const Title = styled(Typography)({
   lineHeight: 1.15,
   flexShrink: 0, // Не сжимается
   color: "inherit",
+
+  "@media (max-width: 768px)": {
+    fontSize: "3.3rem",
+  },
+
+  "@media (max-width: 480px)": {
+    fontSize: "2.5rem",
+  },
 });
 
 const Description = styled("div")({
   maxWidth: 435,
   marginTop: 72,
   lineHeight: 1.7,
+
+  "@media (max-width: 768px)": {
+    marginTop: 36,
+  },
 });
 
 const ContactsBox = styled("div")({

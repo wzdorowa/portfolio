@@ -20,11 +20,23 @@ const theme = createTheme({
       fontSize: "1rem",
       lineHeight: 1.7,
       fontWeight: 400,
+      "@media (max-width: 768px)": {
+        fontSize: "0.88rem",
+      },
+      "@media (max-width: 480px)": {
+        fontSize: "0.8rem",
+      },
     },
     body2: {
       fontSize: "1rem",
       lineHeight: 1.5,
       fontWeight: 400,
+      "@media (max-width: 768px)": {
+        fontSize: "0.88rem",
+      },
+      "@media (max-width: 480px)": {
+        fontSize: "0.8rem",
+      },
     },
   },
   components: {

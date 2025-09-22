@@ -60,10 +60,22 @@ const Root = styled("div")({
   display: "flex",
   minHeight: "100vh",
   backgroundColor: "#ffffff",
+
+  "@media (max-width: 1280px)": {
+    flexDirection: "column",
+    minHeight: 1,
+  },
 });
 
 const ContentSection = styled("div")({
   position: "relative",
   height: "100vh",
   backgroundColor: "#ffffff",
+
+  "@media (max-width: 1280px)": {
+    height: "75vh",
+  },
+  "@media (max-width: 768px)": {
+    height: "85vh",
+  },
 });

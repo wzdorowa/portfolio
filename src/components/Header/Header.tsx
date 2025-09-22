@@ -43,4 +43,11 @@ const HeaderContainer = styled("div")({
 const Navigation = styled("nav")({
   display: "flex",
   gap: 24,
+
+  "@media (max-width: 768px)": {
+    gap: 16,
+  },
+  "@media (max-width: 480px)": {
+    gap: 12,
+  },
 });

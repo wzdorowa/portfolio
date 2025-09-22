@@ -39,9 +39,16 @@ const Container = styled("div")({
 });
 
 const Subtitle = styled("div")({
-  fontSize: 16,
+  fontSize: "1rem",
   lineHeight: 1.7,
   color: "#000",
+
+  "@media (max-width: 768px)": {
+    fontSize: "0.88rem",
+  },
+  "@media (max-width: 480px)": {
+    fontSize: "0.8rem",
+  },
 
   "& .highlight": {
     color: "#4d7cef",
@@ -85,8 +92,15 @@ const DownloadButton = styled("a")(baseButtonStyles);
 const PortfolioButton = styled(Link)(baseButtonStyles);
 
 const ButtonText = styled("span")({
-  fontSize: 16,
+  fontSize: "1rem",
   fontWeight: 500,
+
+  "@media (max-width: 768px)": {
+    fontSize: "0.88rem",
+  },
+  "@media (max-width: 480px)": {
+    fontSize: "0.8rem",
+  },
 
   "& span": {
     color: "#b3b3b3",

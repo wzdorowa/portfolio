@@ -28,6 +28,8 @@ const BackButtonContainer = styled("button")({
   alignItems: "center",
   justifyContent: "center",
   color: "inherit",
+  width: 64,
+  height: 64,
 
   "&:hover": {
     opacity: 0.5,
@@ -37,5 +39,10 @@ const BackButtonContainer = styled("button")({
   "&:active": {
     transform: "scale(0.95)",
     transition: "transform 0.1s ease",
+  },
+
+  "@media (max-width: 768px)": {
+    width: 44,
+    height: 44,
   },
 });

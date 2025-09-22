@@ -6,6 +6,7 @@ import { useScrollShadow } from "../../../../hooks/useScrollShadow";
 import { useAdaptiveHeight } from "../../../../hooks/useAdaptiveHeight";
 import { ScrollableText } from "./ScrollableText";
 import { ScrollShadowContainer } from "./ScrollShadowContainer";
+import { TextColor } from "@/src/types/common";
 
 interface HeroProps {
   /** Заголовок секции */
@@ -15,6 +16,8 @@ interface HeroProps {
   text: string | ReactNode;
   /** Цвет фона для scroll shadow */
   backgroundColor?: string;
+  /** Цвет текста для адаптации скроллбара */
+  textColor?: TextColor;
 }
 
 /**
@@ -26,6 +29,7 @@ export const Hero: FC<HeroProps> = ({
   isEducational,
   text,
   backgroundColor,
+  textColor = "black",
 }) => {
   const { scrollRef, scrollContainerClass } = useScrollShadow(text);
   const { contentRef, needsFullHeight } = useAdaptiveHeight(text);
@@ -47,7 +51,9 @@ export const Hero: FC<HeroProps> = ({
           backgroundColor={backgroundColor}
           ref={contentRef}
         >
-          <ScrollableText scrollRef={scrollRef}>{text}</ScrollableText>
+          <ScrollableText scrollRef={scrollRef} textColor={textColor}>
+            {text}
+          </ScrollableText>
         </ScrollShadowContainer>
       </Content>
     </HeroWrapper>
@@ -58,8 +64,12 @@ const HeroWrapper = styled("div")({
   display: "flex",
   flexDirection: "column",
   gap: 72,
-  minHeight: 0, // Позволяет flex-элементу сжиматься меньше своего контента
+  height: "100%",
   color: "inherit",
+
+  "@media (max-width: 768px)": {
+    gap: 36,
+  },
 });
 
 const HeroTitle = styled(Typography)({
@@ -67,12 +77,28 @@ const HeroTitle = styled(Typography)({
   lineHeight: 1.15,
   flexShrink: 0, // Не сжимается
   color: "inherit",
+
+  "@media (max-width: 768px)": {
+    fontSize: "3.3rem",
+  },
+
+  "@media (max-width: 480px)": {
+    fontSize: "2.5rem",
+  },
 });
 
 const HeroTitleWrapper = styled("div")({
   display: "flex",
   flexDirection: "column",
   gap: 32,
+
+  "@media (max-width: 768px)": {
+    gap: 24,
+  },
+
+  "@media (max-width: 480px)": {
+    gap: 16,
+  },
 });
 
 const Note = styled("span")({
@@ -89,4 +115,8 @@ const Content = styled("div")<ContentProps>(({ $needsFullHeight }) => ({
   flexDirection: "column",
   minHeight: $needsFullHeight ? 1 : "auto", // Минимальная высота только если контент большой
   height: $needsFullHeight ? "100%" : "auto", // Увеличенная высота для страниц проектов
+
+  "@media (max-width: 1280px)": {
+    maxWidth: "100%",
+  },
 }));
