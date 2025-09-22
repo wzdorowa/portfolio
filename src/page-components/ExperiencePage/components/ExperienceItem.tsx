@@ -112,9 +112,12 @@ const Company = styled(Link)({
   fontSize: 20,
   lineHeight: 1.18,
   color: "#4D7CEF",
+  textDecoration: "none",
 
   "&:hover": {
-    opacity: 0.5,
+    textDecoration: "underline",
+    textDecorationThickness: 1.5,
+    textUnderlineOffset: 1.5,
   },
 });
 
