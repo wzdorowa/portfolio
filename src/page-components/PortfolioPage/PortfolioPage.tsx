@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 
 import { Overview } from "@/src/components";
 import { PORTFOLIO_ITEMS, OVERVIEW_DATA } from "@/src/data";
-import { PortfolioCard as PortfolioCardComponent } from "./PortfolioPage/components";
+import { PortfolioCard as PortfolioCardComponent } from "./components";
 
 export function PortfolioPage() {
   return (
@@ -32,6 +32,10 @@ const Root = styled("div")({
   display: "flex",
   minHeight: "100vh",
   backgroundColor: "#ffffff",
+
+  "@media (max-width: 1280px)": {
+    flexDirection: "column",
+  },
 });
 
 const PortfolioSection = styled(Box)({
@@ -41,9 +45,19 @@ const PortfolioSection = styled(Box)({
   overflowY: "scroll",
 
   "@media (max-width: 1440px)": {
-    gridTemplateColumns: "1fr",
     gap: 32,
     padding: "50px 64px 76px 64px",
+  },
+
+  "@media (max-width: 1280px)": {
+    height: "auto",
+    padding: "24px 128px 40px 64px",
+  },
+  "@media (max-width: 768px)": {
+    padding: "24px 48px 40px 32px",
+  },
+  "@media (max-width: 480px)": {
+    padding: "24px 32px 24px 16px",
   },
 });
 
@@ -57,6 +71,14 @@ const PortfolioGrid = styled("div")({
     gridTemplateColumns: "repeat(2, 1fr)",
   },
   "@media (max-width: 1440px)": {
+    gridTemplateColumns: "1fr",
+    gap: 32,
+  },
+  "@media (max-width: 1280px)": {
+    gridTemplateColumns: "repeat(2, 1fr)",
+    gap: 16,
+  },
+  "@media (max-width: 860px)": {
     gridTemplateColumns: "1fr",
     gap: 32,
   },

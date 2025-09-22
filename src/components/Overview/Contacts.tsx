@@ -51,6 +51,11 @@ const ContactsWrapper = styled("div")({
   display: "flex",
   gap: 16,
   flexShrink: 0, // Не сжимается
+
+  "@media (max-width: 480px)": {
+    flexDirection: "column",
+    gap: 8,
+  },
 });
 
 const ContactLink = styled("a")({

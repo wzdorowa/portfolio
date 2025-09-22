@@ -48,8 +48,21 @@ const Root = styled("div")({
   height: "100vh",
   boxSizing: "border-box",
 
+  "@media (max-width: 1280px)": {
+    padding: "24px 128px 40px 64px",
+    minWidth: "auto",
+    maxWidth: "100%",
+    height: "100%",
+    gap: 100,
+  },
+
   "@media (max-width: 768px)": {
-    padding: "24px 16px 40px",
+    padding: "24px 48px 40px 32px",
+    gap: 64,
+  },
+  "@media (max-width: 480px)": {
+    padding: "16px 32px 24px 16px",
+    gap: 48,
   },
 });
 
@@ -79,6 +92,10 @@ const Description = styled("div")({
   marginTop: 72,
   lineHeight: 1.7,
 
+  "@media (max-width: 1280px)": {
+    maxWidth: 675,
+  },
+
   "@media (max-width: 768px)": {
     marginTop: 36,
   },
@@ -86,4 +103,11 @@ const Description = styled("div")({
 
 const ContactsBox = styled("div")({
   marginTop: 40,
+
+  "@media (max-width: 768px)": {
+    marginTop: 24,
+  },
+  "@media (max-width: 480px)": {
+    marginTop: 16,
+  },
 });
