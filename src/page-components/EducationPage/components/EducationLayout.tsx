@@ -21,11 +21,24 @@ export const EducationLayout = ({ children }: EducationLayoutProps) => (
 
 const Root = styled("div")({
   background: "#fff",
-  minHeight: "100vh",
-  margin: "42px 64px 80px",
+  padding: "42px 64px 80px",
   display: "flex",
   flexDirection: "column",
   gap: 125,
+
+  "@media (max-width: 1300px)": {
+    padding: "24px 128px 40px 64px",
+    gap: 100,
+  },
+
+  "@media (max-width: 768px)": {
+    padding: "24px 48px 40px 32px",
+    gap: 64,
+  },
+  "@media (max-width: 480px)": {
+    padding: "16px 32px 24px 16px",
+    gap: 48,
+  },
 });
 
 const Content = styled(Box)({
@@ -41,9 +54,11 @@ const Title = styled(Typography)({
 
   "@media (max-width: 768px)": {
     fontSize: "3.3rem",
+    marginBottom: 36,
   },
 
   "@media (max-width: 480px)": {
     fontSize: "2.5rem",
+    marginBottom: 24,
   },
 });
