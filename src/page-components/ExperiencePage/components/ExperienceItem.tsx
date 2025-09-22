@@ -2,6 +2,7 @@
 
 import { styled } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
+import Link from "next/link";
 import { useExpandable } from "../hooks";
 import { formatTextWithLinks } from "../utils";
 import { type ExperienceData, EXPERIENCE_PAGE_CONTENT } from "@/src/data";
@@ -14,6 +15,8 @@ interface ExperienceItemProps {
 interface ExperienceHeaderProps {
   period: ExperienceData["period"];
   position: ExperienceData["position"];
+  company: ExperienceData["company"];
+  companyLink: ExperienceData["companyLink"];
 }
 
 interface ExpandableDescriptionProps {
@@ -21,10 +24,16 @@ interface ExpandableDescriptionProps {
 }
 
 // Sub-components
-const ExperienceHeader = ({ period, position }: ExperienceHeaderProps) => (
+const ExperienceHeader = ({
+  period,
+  position,
+  company,
+  companyLink,
+}: ExperienceHeaderProps) => (
   <TitleSection>
     <Period>{period}</Period>
     <Position>{position}</Position>
+    <Company href={companyLink}>{company}</Company>
   </TitleSection>
 );
 
@@ -55,9 +64,13 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => (
     <ExperienceHeader
       period={experience.period}
       position={experience.position}
+      company={experience.company}
+      companyLink={experience.companyLink}
     />
-    <Stack>{experience.stack}</Stack>
-    <ExpandableDescription description={experience.description} />
+    <ExperienceHero>
+      <Stack>{experience.stack}</Stack>
+      <ExpandableDescription description={experience.description} />
+    </ExperienceHero>
   </ExperienceContainer>
 );
 
@@ -67,6 +80,12 @@ const ExperienceContainer = styled("div")({
   flexDirection: "column",
   gap: 32,
   width: "100%",
+});
+
+const ExperienceHero = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  gap: 8,
 });
 
 const TitleSection = styled("div")({
@@ -87,6 +106,16 @@ const Position = styled("div")({
   lineHeight: 1.18,
   color: "#000",
   fontWeight: 400,
+});
+
+const Company = styled(Link)({
+  fontSize: 20,
+  lineHeight: 1.18,
+  color: "#4D7CEF",
+
+  "&:hover": {
+    opacity: 0.5,
+  },
 });
 
 const Stack = styled("div")({

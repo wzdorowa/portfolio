@@ -1,9 +1,9 @@
 "use client";
 
 import { FC, ReactNode } from "react";
-import { styled } from "@mui/material";
-import { useScrollShadow } from "../../hooks/useScrollShadow";
-import { HeroTitle } from "./HeroTitle";
+import { styled, Typography } from "@mui/material";
+import { useScrollShadow } from "../../../../hooks/useScrollShadow";
+import { useAdaptiveHeight } from "../../../../hooks/useAdaptiveHeight";
 import { ScrollableText } from "./ScrollableText";
 import { ScrollShadowContainer } from "./ScrollShadowContainer";
 
@@ -28,18 +28,24 @@ export const Hero: FC<HeroProps> = ({
   backgroundColor,
 }) => {
   const { scrollRef, scrollContainerClass } = useScrollShadow(text);
+  const { contentRef, needsFullHeight } = useAdaptiveHeight(text);
+
+  // Если text - это не строка (например, ProjectContent компонент), то всегда используем полную высоту
+  const isComplexContent = typeof text !== "string";
+  const shouldUseFullHeight = isComplexContent || needsFullHeight;
 
   return (
     <HeroWrapper>
       <HeroTitleWrapper>
-        <HeroTitle>{title}</HeroTitle>
+        <HeroTitle variant="h1">{title}</HeroTitle>
         {isEducational && <Note>Работа в рамках обучения</Note>}
       </HeroTitleWrapper>
 
-      <Content>
+      <Content $needsFullHeight={shouldUseFullHeight}>
         <ScrollShadowContainer
           className={scrollContainerClass}
           backgroundColor={backgroundColor}
+          ref={contentRef}
         >
           <ScrollableText scrollRef={scrollRef}>{text}</ScrollableText>
         </ScrollShadowContainer>
@@ -49,11 +55,17 @@ export const Hero: FC<HeroProps> = ({
 };
 
 const HeroWrapper = styled("div")({
-  flex: 1, // Занимает всю доступную высоту в Overview
   display: "flex",
   flexDirection: "column",
   gap: 72,
   minHeight: 0, // Позволяет flex-элементу сжиматься меньше своего контента
+  color: "inherit",
+});
+
+const HeroTitle = styled(Typography)({
+  fontSize: "4.5rem",
+  lineHeight: 1.15,
+  flexShrink: 0, // Не сжимается
   color: "inherit",
 });
 
@@ -67,10 +79,14 @@ const Note = styled("span")({
   fontStyle: "italic",
 });
 
-const Content = styled("div")({
-  flex: 1, // Занимает оставшуюся высоту после заголовка
+interface ContentProps {
+  $needsFullHeight: boolean;
+}
+
+const Content = styled("div")<ContentProps>(({ $needsFullHeight }) => ({
   maxWidth: 450,
   display: "flex",
   flexDirection: "column",
-  minHeight: 0, // Позволяет сжиматься
-});
+  minHeight: $needsFullHeight ? 1 : "auto", // Минимальная высота только если контент большой
+  height: $needsFullHeight ? "100%" : "auto", // Увеличенная высота для страниц проектов
+}));

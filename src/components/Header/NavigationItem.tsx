@@ -33,7 +33,7 @@ const NavigationItemContainer = styled("div")<NavigationItemProps>({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  gap: 6,
+  gap: 3,
 });
 
 const NavigationLink = styled(Link)<{ $textColor?: TextColor }>(

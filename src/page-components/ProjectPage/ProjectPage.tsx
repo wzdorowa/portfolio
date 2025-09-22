@@ -8,6 +8,7 @@ import {
   ProjectContent,
   ProjectImageSection,
   ProjectNotFound,
+  ProjectOverview,
 } from "./components";
 
 /**
@@ -40,13 +41,12 @@ export function ProjectPage({ projectData, onBackClick }: ProjectPageProps) {
   return (
     <Root>
       <ContentSection>
-        <Overview
+        <ProjectOverview
           backgroundColor={projectData.backgroundColor}
           textColor={projectData.textColor}
           title={projectData.title}
           isEducational={projectData.isEducational}
           text={<ProjectContent projectData={projectData} />}
-          withBackButton={true}
           onBackClick={handleBackClick}
         />
       </ContentSection>

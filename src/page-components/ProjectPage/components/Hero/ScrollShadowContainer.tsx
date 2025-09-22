@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, forwardRef } from "react";
 import { styled } from "@mui/material";
 
 interface ScrollShadowContainerProps {
@@ -7,15 +7,17 @@ interface ScrollShadowContainerProps {
   backgroundColor?: string;
 }
 
-export const ScrollShadowContainer: FC<ScrollShadowContainerProps> = ({
+export const ScrollShadowContainer = forwardRef<HTMLDivElement, ScrollShadowContainerProps>(({
   children,
   className,
   backgroundColor,
-}) => (
-  <StyledContainer className={className} $backgroundColor={backgroundColor}>
+}, ref) => (
+  <StyledContainer ref={ref} className={className} $backgroundColor={backgroundColor}>
     {children}
   </StyledContainer>
-);
+));
+
+ScrollShadowContainer.displayName = 'ScrollShadowContainer';
 
 interface StyledContainerProps {
   $backgroundColor?: string;
@@ -23,9 +25,9 @@ interface StyledContainerProps {
 
 const StyledContainer = styled("div")<StyledContainerProps>(
   ({ $backgroundColor }) => ({
-    flex: 1,
     position: "relative",
     minHeight: 0, // Позволяет flex-элементу сжиматься
+    height: "100%", // Занимает высоту родителя
 
     // Верхняя тень при скролле
     "&::before": {

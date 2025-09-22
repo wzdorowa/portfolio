@@ -4,6 +4,7 @@ export interface ExperienceData {
   period: string;
   position: string;
   company: string;
+  companyLink: string;
   stack: string;
   description: string;
 }
@@ -15,6 +16,7 @@ export const EXPERIENCE_DATA: readonly ExperienceData[] = [
     period: "Март 2023 — Февраль 2025",
     position: "Frontend-разработчик",
     company: "Apostro",
+    companyLink: "https://app.apostro.xyz/protocols",
     stack:
       "Стек технологий: TypeScript, Next, React, React Router, styled-components, RxJS.",
     description: `Помогала поддерживать и обновлять существующую кодовую базу по фронтенду.
@@ -37,6 +39,7 @@ export const EXPERIENCE_DATA: readonly ExperienceData[] = [
     period: "Сентябрь 2022 — Март 2023",
     position: "Frontend-разработчик",
     company: "Only",
+    companyLink: "https://only.digital/",
     stack:
       "Стек технологий: TypeScript, Webpack, PUG, SCSS, React, Redux (в зависимости от проекта)",
     description: `В рамках испытания при принятии на должность выполняла тестовое задание: форма авторизации (стек технологий: React, TypeScript, React Router, styled-components, React Hook Form, RxJS) https://wzdorowa.github.io/authorization/
@@ -66,6 +69,7 @@ export const EXPERIENCE_DATA: readonly ExperienceData[] = [
     period: "Январь 2022 — Июль 2022",
     position: "Frontend-разработчик",
     company: "MetaLamp",
+    companyLink: "https://metalamp.ru/",
     stack:
       "Стек технологий: JavaScript, TypeScript, JQuery, Parcel, SCSS, Pug, Jest.",
     description: `Вёрстка сайта:
