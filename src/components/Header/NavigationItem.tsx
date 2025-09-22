@@ -2,8 +2,10 @@ import { FC } from "react";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { NavigationItem, NavigationItemProps } from "./types";
 import { TextColor } from "../../types/common";
+import { useLoading } from "../../providers/LoadingProvider";
 
 /**
  * Компонент элемента навигации
@@ -13,20 +15,33 @@ export const NavigationItemComponent: FC<{
   isActive: boolean;
   isExactMatch: boolean;
   textColor?: TextColor;
-}> = ({ item, isActive, isExactMatch, textColor = "black" }) => (
-  <NavigationItemContainer $isActive={isActive}>
-    {isExactMatch ? (
-      <NavigationText>
-        <Typography variant="body1">{item.label}</Typography>
-      </NavigationText>
-    ) : (
-      <NavigationLink $textColor={textColor} href={item.href}>
-        <Typography variant="body1">{item.label}</Typography>
-      </NavigationLink>
-    )}
-    <ActiveIndicator $isActive={isActive} $textColor={textColor} />
-  </NavigationItemContainer>
-);
+}> = ({ item, isActive, isExactMatch, textColor = "black" }) => {
+  const router = useRouter();
+  const { setIsLoading } = useLoading();
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!isExactMatch) {
+      setIsLoading(true);
+      router.push(item.href);
+    }
+  };
+
+  return (
+    <NavigationItemContainer $isActive={isActive}>
+      {isExactMatch ? (
+        <NavigationText>
+          <Typography variant="body1">{item.label}</Typography>
+        </NavigationText>
+      ) : (
+        <NavigationLink $textColor={textColor} href={item.href} onClick={handleClick}>
+          <Typography variant="body1">{item.label}</Typography>
+        </NavigationLink>
+      )}
+      <ActiveIndicator $isActive={isActive} $textColor={textColor} />
+    </NavigationItemContainer>
+  );
+};
 
 // Styled Components для NavigationItem
 const NavigationItemContainer = styled("div")<NavigationItemProps>({

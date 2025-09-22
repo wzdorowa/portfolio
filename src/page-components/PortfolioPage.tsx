@@ -3,10 +3,10 @@
 import { styled } from "@mui/material";
 import React from "react";
 import Box from "@mui/material/Box";
-import Link from "next/link";
 
 import { Overview } from "@/src/components";
 import { PORTFOLIO_ITEMS, OVERVIEW_DATA } from "@/src/data";
+import { PortfolioCard as PortfolioCardComponent } from "./PortfolioPage/components";
 
 export function PortfolioPage() {
   return (
@@ -15,9 +15,12 @@ export function PortfolioPage() {
       <PortfolioSection>
         <PortfolioGrid>
           {PORTFOLIO_ITEMS.map((item) => (
-            <Link key={item.id} href={`/portfolio/${item.id}`} passHref>
-              <PortfolioCard backgroundImage={item.image} title={item.alt} />
-            </Link>
+            <PortfolioCardComponent
+              key={item.id}
+              id={item.id}
+              image={item.image}
+              alt={item.alt}
+            />
           ))}
         </PortfolioGrid>
       </PortfolioSection>
@@ -58,24 +61,3 @@ const PortfolioGrid = styled("div")({
     gap: 32,
   },
 });
-
-const PortfolioCard = styled("div")<{ backgroundImage: string }>(
-  ({ backgroundImage }) => ({
-    position: "relative",
-    height: 315,
-    overflow: "hidden",
-    backgroundImage: `url(${backgroundImage})`,
-    backgroundSize: "100% auto",
-    backgroundPosition: "top",
-    backgroundRepeat: "no-repeat",
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-    transition: "transform 0.3s ease",
-    cursor: "pointer",
-    display: "block",
-    textDecoration: "none",
-
-    "&:hover": {
-      transform: "scale(1.05)",
-    },
-  })
-);

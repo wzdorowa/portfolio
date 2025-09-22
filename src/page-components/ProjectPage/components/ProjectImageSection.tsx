@@ -1,6 +1,8 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { styled } from "@mui/material";
 import Image from "next/image";
+import { ImageLoader } from "@/src/components";
+import { useImageLoadProgress } from "@/src/hooks";
 
 interface ProjectImageSectionProps {
   src: string;
@@ -13,6 +15,7 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [showScrollArrow, setShowScrollArrow] = useState(false);
+  const { isLoaded } = useImageLoadProgress(src);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -48,7 +51,7 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
         img.removeEventListener('load', checkScrollable);
       }
     };
-  }, []);
+  }, [isLoaded]);
 
   const handleArrowClick = () => {
     const container = containerRef.current;
@@ -64,6 +67,9 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
 
   return (
     <ImageSection ref={containerRef}>
+      {/* Лоадер изображения */}
+      {!isLoaded && <ImageLoader />}
+      
       <ProjectImage
         src={src}
         alt={alt}
@@ -74,12 +80,14 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
           width: "100%",
           height: "auto",
           display: "block",
+          opacity: isLoaded ? 1 : 0,
+          transition: "opacity 0.3s ease",
         }}
         priority
       />
       
       {/* Анимированная стрелка для намека на скролл */}
-      {showScrollArrow && (
+      {showScrollArrow && isLoaded && (
         <ScrollArrow onClick={handleArrowClick}>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
