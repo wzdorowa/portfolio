@@ -22,7 +22,7 @@ export const ExperienceLayout = ({ children }: ExperienceLayoutProps) => (
 const Root = styled("div")({
   background: "#fff",
   minHeight: "100vh",
-  margin: "42px 48px 160px",
+  margin: "42px 64px 160px",
   display: "flex",
   flexDirection: "column",
   gap: 125,

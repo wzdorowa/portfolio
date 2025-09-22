@@ -42,7 +42,7 @@ const Root = styled("div")({
   flexDirection: "column",
   alignItems: "flex-start",
   gap: 125,
-  padding: "42px 48px 80px",
+  padding: "42px 64px 80px",
   minWidth: 580,
   maxWidth: 600,
   height: "100vh",
