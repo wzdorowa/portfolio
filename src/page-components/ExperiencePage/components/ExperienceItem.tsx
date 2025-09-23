@@ -80,6 +80,13 @@ const ExperienceContainer = styled("div")({
   flexDirection: "column",
   gap: 32,
   width: "100%",
+
+  "@media (max-width: 768px)": {
+    gap: 24,
+  },
+  "@media (max-width: 480px)": {
+    gap: 20,
+  },
 });
 
 const ExperienceHero = styled("div")({
@@ -93,26 +100,53 @@ const TitleSection = styled("div")({
   flexDirection: "column",
   gap: 12,
   maxWidth: 563,
+
+  "@media (max-width: 480px)": {
+    gap: 10,
+  },
 });
 
 const Period = styled("div")({
-  fontSize: 20,
+  fontSize: "1.25rem",
   lineHeight: 1.18,
   color: "#000",
+
+  "@media (max-width: 768px)": {
+    fontSize: "1.15rem",
+  },
+  "@media (max-width: 480px)": {
+    fontSize: "1rem",
+  },
 });
 
-const Position = styled("div")({
-  fontSize: 48,
+const Position = styled("h2")({
+  fontSize: "3rem",
   lineHeight: 1.18,
   color: "#000",
   fontWeight: 400,
+  margin: 0,
+  padding: 0,
+
+  "@media (max-width: 768px)": {
+    fontSize: "2.5rem",
+  },
+  "@media (max-width: 480px)": {
+    fontSize: "2rem",
+  },
 });
 
 const Company = styled(Link)({
-  fontSize: 20,
+  fontSize: "1.25rem",
   lineHeight: 1.18,
   color: "#4D7CEF",
   textDecoration: "none",
+
+  "@media (max-width: 768px)": {
+    fontSize: "1.15rem",
+  },
+  "@media (max-width: 480px)": {
+    fontSize: "1rem",
+  },
 
   "&:hover": {
     textDecoration: "underline",
@@ -122,9 +156,16 @@ const Company = styled(Link)({
 });
 
 const Stack = styled("div")({
-  fontSize: 16,
+  fontSize: "1rem",
   lineHeight: 1.7,
   color: "#000",
+
+  "@media (max-width: 768px)": {
+    fontSize: "0.88rem",
+  },
+  "@media (max-width: 480px)": {
+    fontSize: "0.8rem",
+  },
 });
 
 const DescriptionSection = styled("div")({
@@ -146,10 +187,17 @@ const DropdownHeader = styled("div")({
 });
 
 const DropdownTitle = styled("div")({
-  fontSize: 16,
+  fontSize: "1rem",
   lineHeight: 1.7,
   color: "#000",
   fontWeight: 600,
+
+  "@media (max-width: 768px)": {
+    fontSize: "0.88rem",
+  },
+  "@media (max-width: 480px)": {
+    fontSize: "0.8rem",
+  },
 });
 
 const ExpandIcon = styled("div")<{ isExpanded: boolean }>(({ isExpanded }) => ({

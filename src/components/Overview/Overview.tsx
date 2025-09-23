@@ -41,7 +41,7 @@ const Root = styled("div")({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
-  gap: 125,
+  gap: 100,
   padding: "42px 64px 80px",
   minWidth: 580,
   maxWidth: 600,
@@ -53,7 +53,6 @@ const Root = styled("div")({
     minWidth: "auto",
     maxWidth: "100%",
     height: "100%",
-    gap: 100,
   },
 
   "@media (max-width: 768px)": {

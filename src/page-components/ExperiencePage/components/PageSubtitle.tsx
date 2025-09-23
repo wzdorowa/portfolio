@@ -36,6 +36,14 @@ const Container = styled("div")({
   flexDirection: "column",
   gap: 24,
   marginBottom: 80,
+
+  "@media (max-width: 768px)": {
+    marginBottom: 64,
+  },
+
+  "@media (max-width: 480px)": {
+    marginBottom: 48,
+  },
 });
 
 const Subtitle = styled("div")({

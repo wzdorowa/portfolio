@@ -22,10 +22,23 @@ export const ExperienceLayout = ({ children }: ExperienceLayoutProps) => (
 const Root = styled("div")({
   background: "#fff",
   minHeight: "100vh",
-  margin: "42px 64px 160px",
+  padding: "24px 128px 160px 64px",
   display: "flex",
   flexDirection: "column",
-  gap: 125,
+  gap: 100,
+
+  "@media (max-width: 1300px)": {
+    padding: "24px 128px 120px 64px",
+  },
+
+  "@media (max-width: 768px)": {
+    padding: "24px 48px 100px 32px",
+    gap: 64,
+  },
+  "@media (max-width: 480px)": {
+    padding: "16px 32px 64px 16px",
+    gap: 48,
+  },
 });
 
 const Content = styled(Box)({
@@ -37,12 +50,14 @@ const Content = styled(Box)({
 const Title = styled(Typography)({
   fontSize: "4.5rem",
   lineHeight: 1.18,
-  marginBottom: 80,
+  marginBottom: 40,
 
   "@media (max-width: 768px)": {
     fontSize: "3.3rem",
+    marginBottom: 36,
   },
   "@media (max-width: 480px)": {
     fontSize: "2.5rem",
+    marginBottom: 24,
   },
 });

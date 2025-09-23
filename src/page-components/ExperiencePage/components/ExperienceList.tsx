@@ -16,4 +16,11 @@ const List = styled("div")({
   display: "flex",
   flexDirection: "column",
   gap: 80,
+
+  "@media (max-width: 768px)": {
+    gap: 64,
+  },
+  "@media (max-width: 480px)": {
+    gap: 48,
+  },
 });
