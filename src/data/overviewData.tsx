@@ -11,13 +11,7 @@ export interface OverviewData {
 // Overview data for different pages
 export const OVERVIEW_DATA = {
   main: {
-    title: (
-      <>
-        Вероника
-        <br />
-        Здорова
-      </>
-    ),
+    title: <>Вероника Здорова</>,
     text: "Развиваюсь в\u00A0сфере дизайна интерфейсов. Несколько лет работала фронтенд-разработчиком. Помогу построить дизайн интерфейса и\u00A0реализовать его в\u00A0веб-пространстве.",
     isEducational: false,
     withBackButton: false,
