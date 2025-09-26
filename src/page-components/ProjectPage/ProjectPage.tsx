@@ -24,18 +24,25 @@ import {
  */
 
 interface ProjectPageProps {
+  id: string;
   /** Данные проекта для отображения. Если null, показывается страница "Проект не найден" */
   projectData: ProjectData | null;
   /** Обработчик клика по кнопке "Назад". По умолчанию - window.history.back() */
   onBackClick?: () => void;
 }
 
-export function ProjectPage({ projectData, onBackClick }: ProjectPageProps) {
+export function ProjectPage({
+  id,
+  projectData,
+  onBackClick,
+}: ProjectPageProps) {
   const handleBackClick = onBackClick || (() => window.history.back());
 
   if (!projectData) {
     return <ProjectNotFound onBackClick={handleBackClick} />;
   }
+
+  console.log("projectId", id);
 
   return (
     <Root>
@@ -50,7 +57,11 @@ export function ProjectPage({ projectData, onBackClick }: ProjectPageProps) {
         />
       </ContentSection>
 
-      <ProjectImageSection src={projectData.image} alt={projectData.title} />
+      <ProjectImageSection
+        src={projectData.image}
+        alt={projectData.title}
+        id={id}
+      />
     </Root>
   );
 }

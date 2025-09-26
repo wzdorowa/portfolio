@@ -13,6 +13,7 @@ export function ProjectPageContainer({ projectId }: ProjectPageContainerProps) {
 
   return (
     <ProjectPage
+      id={projectId || ""}
       projectData={projectData || null}
       onBackClick={handleBackClick}
     />

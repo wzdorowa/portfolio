@@ -5,17 +5,38 @@ import { ImageLoader } from "@/src/components";
 import { useImageLoadProgress } from "@/src/hooks";
 
 interface ProjectImageSectionProps {
+  id: string;
   src: string;
   alt: string;
 }
 
+const backgroundForProject: Partial<Record<string, string>> = {
+  default: "transparent",
+  "resolve-stats": "#172930",
+};
+const borderForProject: Partial<Record<string, boolean>> = {
+  default: false,
+  "resolve-stats": true,
+};
+const bgImageForProject: Partial<Record<string, string | React.CSSProperties>> =
+  {
+    default: "none",
+    documents: {
+      backgroundColor: "#F9FBFE",
+      backgroundImage:
+        "repeating-radial-gradient( circle at 0 0, transparent 0, #F9FBFE 32px ), repeating-linear-gradient( #F1F5FE55, #F1F5FE );",
+    },
+  };
+
 export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
+  id,
   src,
   alt,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [showScrollArrow, setShowScrollArrow] = useState(false);
   const { isLoaded } = useImageLoadProgress(src);
+  console.log("id", id);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -32,23 +53,23 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
     };
 
     // Проверяем при загрузке изображения
-    const img = container.querySelector('img');
+    const img = container.querySelector("img");
     if (img) {
       if (img.complete) {
         checkScrollable();
       } else {
-        img.addEventListener('load', checkScrollable);
+        img.addEventListener("load", checkScrollable);
       }
     }
 
-    container.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', checkScrollable);
+    container.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", checkScrollable);
 
     return () => {
-      container.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', checkScrollable);
+      container.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", checkScrollable);
       if (img) {
-        img.removeEventListener('load', checkScrollable);
+        img.removeEventListener("load", checkScrollable);
       }
     };
   }, [isLoaded]);
@@ -56,21 +77,22 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
   const handleArrowClick = () => {
     const container = containerRef.current;
     if (!container) return;
-    
+
     // Прокручиваем на 70% высоты контейнера
     const scrollAmount = container.clientHeight * 0.7;
     container.scrollBy({
       top: scrollAmount,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
   return (
-    <ImageSection ref={containerRef}>
+    <ImageSection ref={containerRef} $id={id}>
       {/* Лоадер изображения */}
       {!isLoaded && <ImageLoader />}
-      
+
       <ProjectImage
+        $id={id}
         src={src}
         alt={alt}
         width={1200}
@@ -85,7 +107,7 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
         }}
         priority
       />
-      
+
       {/* Анимированная стрелка для намека на скролл */}
       {showScrollArrow && isLoaded && (
         <ScrollArrow onClick={handleArrowClick}>
@@ -104,11 +126,20 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
   );
 };
 
-const ImageSection = styled("div")({
+const ImageSection = styled("div")<{
+  $id: string;
+}>(({ $id }) => ({
   position: "relative",
   flex: 1,
+  minHeight: "100vh",
   height: "100vh", // Фиксированная высота экрана
   overflowY: "auto", // Скролл при переполнении
+  alignContent: "center",
+  backgroundColor: backgroundForProject[$id] || "transparent",
+  ...(typeof bgImageForProject[$id] === "object" &&
+  !Array.isArray(bgImageForProject[$id])
+    ? bgImageForProject[$id]
+    : {}),
 
   // Стили для скроллбара
   "&::-webkit-scrollbar": {
@@ -124,13 +155,17 @@ const ImageSection = styled("div")({
   "&::-webkit-scrollbar-thumb:hover": {
     background: "rgba(0, 0, 0, 0.3)",
   },
-});
+}));
 
-const ProjectImage = styled(Image)({
+const ProjectImage = styled(Image)<{
+  $id: string;
+}>(({ $id }) => ({
   borderRadius: 0,
   maxWidth: "100%",
   height: "auto",
-});
+  borderTop: borderForProject[$id] ? "1px solid #fff" : "none",
+  borderBottom: borderForProject[$id] ? "1px solid #fff" : "none",
+}));
 
 // Анимированная стрелка для намека на скролл
 const ScrollArrow = styled("div")({
@@ -151,13 +186,13 @@ const ScrollArrow = styled("div")({
   backgroundColor: "rgba(255, 255, 255, 0.8)",
   boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
   transition: "all 0.3s ease",
-  
+
   "&:hover": {
     backgroundColor: "rgba(255, 255, 255, 0.95)",
     color: "rgba(0, 0, 0, 0.7)",
     transform: "translateX(-50%) scale(1.1)",
   },
-  
+
   "@keyframes bounce": {
     "0%, 20%, 50%, 80%, 100%": {
       transform: "translateX(-50%) translateY(0)",

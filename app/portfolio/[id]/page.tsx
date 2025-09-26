@@ -46,5 +46,5 @@ export default function ProjectPageRoute({ params }: ProjectPageRouteProps) {
   }
 
   // Передаем данные проекта в компонент
-  return <ProjectPage projectData={projectData} />;
+  return <ProjectPage id={params.id} projectData={projectData} />;
 }
