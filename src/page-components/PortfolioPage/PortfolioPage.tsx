@@ -40,18 +40,18 @@ const Root = styled("div")({
 
 const PortfolioSection = styled(Box)({
   flex: 2,
-  padding: "50px 64px 76px 0",
+  padding: "50px 48px 76px 0",
   height: "100vh",
   overflowY: "scroll",
 
   "@media (max-width: 1440px)": {
     gap: 32,
-    padding: "50px 64px 76px 64px",
+    padding: "50px 64px 76px 48px",
   },
 
   "@media (max-width: 1280px)": {
     height: "auto",
-    padding: "24px 128px 40px 64px",
+    padding: "24px 128px 40px 48px",
   },
   "@media (max-width: 768px)": {
     padding: "24px 48px 40px 32px",

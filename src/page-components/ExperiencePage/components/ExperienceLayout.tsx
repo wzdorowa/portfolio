@@ -22,13 +22,13 @@ export const ExperienceLayout = ({ children }: ExperienceLayoutProps) => (
 const Root = styled("div")({
   background: "#fff",
   minHeight: "100vh",
-  padding: "24px 128px 160px 64px",
+  padding: "24px 128px 160px 48px",
   display: "flex",
   flexDirection: "column",
   gap: 100,
 
   "@media (max-width: 1300px)": {
-    padding: "24px 128px 120px 64px",
+    padding: "24px 128px 120px 48px",
   },
 
   "@media (max-width: 768px)": {

@@ -56,7 +56,7 @@ const Root = styled("div")<{
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
-  padding: "42px 64px 80px",
+  padding: "42px 48px 80px",
   minWidth: 580,
   maxWidth: 600,
   height: "100vh",
@@ -65,7 +65,7 @@ const Root = styled("div")<{
   color: $textColor || "inherit",
 
   "@media (max-width: 1280px)": {
-    padding: "24px 128px 40px 64px",
+    padding: "24px 128px 40px 48px",
     minWidth: "auto",
     maxWidth: "100%",
     height: "100%",

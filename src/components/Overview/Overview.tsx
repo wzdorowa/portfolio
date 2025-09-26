@@ -42,14 +42,14 @@ const Root = styled("div")({
   flexDirection: "column",
   alignItems: "flex-start",
   gap: 100,
-  padding: "42px 64px 80px",
+  padding: "42px 48px 80px",
   minWidth: 580,
   maxWidth: 600,
   height: "100vh",
   boxSizing: "border-box",
 
   "@media (max-width: 1280px)": {
-    padding: "24px 128px 40px 64px",
+    padding: "24px 128px 40px 48px",
     minWidth: "auto",
     maxWidth: "100%",
     height: "100%",
