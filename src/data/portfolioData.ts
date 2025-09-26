@@ -9,22 +9,22 @@ export interface PortfolioItem {
 export const PORTFOLIO_ITEMS: readonly PortfolioItem[] = [
   {
     id: "vaults-admin-panel",
-    image: "/images/portfolio/vaults-admin-panel.png",
+    image: "/images/portfolio/vaults-admin-panel.webp",
     alt: "Vaults admin panel",
   },
   {
     id: "bitzevskaya-fabrica",
-    image: "/images/portfolio/bitzevskaya-fabrica.png",
+    image: "/images/portfolio/bitzevskaya-fabrica.webp",
     alt: "Битцевская фабрика (Главная страница)",
   },
   {
     id: "crypto-landing",
-    image: "/images/portfolio/apostro.png",
+    image: "/images/portfolio/crypto-landing.webp",
     alt: "Apostro lending",
   },
   {
     id: "murnorka-landing",
-    image: "/images/portfolio/murnorka.png",
+    image: "/images/portfolio/murnorka.webp",
     alt: "Мурнорка (Промостраница коллекции)",
   },
   {
@@ -34,17 +34,17 @@ export const PORTFOLIO_ITEMS: readonly PortfolioItem[] = [
   },
   {
     id: "smart-socket",
-    image: "/images/portfolio/rozetka.png",
+    image: "/images/portfolio/smart-socket.webp",
     alt: "Умная розетка",
   },
   {
     id: "dostavka",
-    image: "/images/portfolio/dostavka.png",
+    image: "/images/portfolio/dostavka.webp",
     alt: "Сервис доставки",
   },
   {
     id: "documents",
-    image: "/images/portfolio/documents.png",
+    image: "/images/portfolio/documents.webp",
     alt: "Сервис хранения документов",
   },
 ] as const;
