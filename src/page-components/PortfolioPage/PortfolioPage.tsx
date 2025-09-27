@@ -9,12 +9,15 @@ import { PORTFOLIO_ITEMS, OVERVIEW_DATA } from "@/src/data";
 import { PortfolioCard as PortfolioCardComponent } from "./components";
 
 export function PortfolioPage() {
+  const sortPortfolioItems = [...PORTFOLIO_ITEMS].sort(
+    (a, b) => b.year - a.year
+  );
   return (
     <Root>
       <Overview {...OVERVIEW_DATA.portfolio} />
       <PortfolioSection>
         <PortfolioGrid>
-          {PORTFOLIO_ITEMS.map((item) => (
+          {sortPortfolioItems.map((item) => (
             <PortfolioCardComponent
               key={item.id}
               id={item.id}

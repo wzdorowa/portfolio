@@ -184,7 +184,7 @@ export const PROJECT_DATA: readonly ProjectData[] = [
     textColor: "white",
     title: "Панель управления крипто-активами",
     isEducational: false,
-    year: 2024,
+    year: 2025,
     image: "/images/portfolio/vaults-admin-panel.webp",
     content: {
       task: "Создать удобный инструмент для DeFi-аналитика, позволяющий управлять пулами ликвидности, конфигурацией контрактов и\u00A0транзакциями.",
@@ -355,7 +355,7 @@ export const PROJECT_DATA: readonly ProjectData[] = [
     id: "resolve-stats",
     title: "Панель крипто-статистики",
     isEducational: false,
-    year: 2025,
+    year: 2024,
     image: "/images/portfolio/resolve-stats.png",
     content: {
       task: "Resolv\u00A0— это DeFi-протокол, связанный с\u00A0обеспечением стейблкоинов и\u00A0управлением залоговыми активами. Основная цель интерфейса\u00A0— дать пользователям (трейдерам, держателям токенов и\u00A0ликвидити-провайдерам) быстрый доступ к\u00A0метрикам «здоровья» протокола и\u00A0рисков.",
