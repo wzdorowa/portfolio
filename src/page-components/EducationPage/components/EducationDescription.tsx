@@ -31,7 +31,7 @@ const Description = styled("div")({
   color: "#000",
   marginBottom: 32,
 
-  "@media (max-width: 768px)": {
+  "@media (max-width: 540px)": {
     fontSize: "0.88rem",
   },
   "@media (max-width: 480px)": {

@@ -86,11 +86,15 @@ const HeroBox = styled("div")({
   marginTop: 100,
   minHeight: 0,
 
+  "@media (max-width: 1280px)": {
+    marginTop: 80,
+  },
   "@media (max-width: 768px)": {
     marginTop: 64,
   },
   "@media (max-width: 480px)": {
     marginTop: 48,
+    marginRight: 16,
   },
 });
 

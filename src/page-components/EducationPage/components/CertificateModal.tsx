@@ -70,7 +70,7 @@ const CloseButton = styled("button")({
   alignItems: "center",
   justifyContent: "center",
 
-  "@media (max-width: 768px)": {
+  "@media (max-width: 540px)": {
     fontSize: "0.88rem",
   },
   "@media (max-width: 480px)": {

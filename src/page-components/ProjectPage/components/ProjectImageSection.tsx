@@ -141,6 +141,10 @@ const ImageSection = styled("div")<{
     ? bgImageForProject[$id]
     : {}),
 
+  "@media (max-width: 1280px)": {
+    overflowY: "visible",
+  },
+
   // Стили для скроллбара
   "&::-webkit-scrollbar": {
     width: 8,

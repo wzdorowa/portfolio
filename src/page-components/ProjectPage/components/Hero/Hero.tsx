@@ -73,6 +73,9 @@ const HeroWrapper = styled("div")({
   height: "100%",
   color: "inherit",
 
+  "@media (max-width: 1280px)": {
+    gap: 48,
+  },
   "@media (max-width: 768px)": {
     gap: 36,
   },
@@ -84,7 +87,7 @@ const HeroTitle = styled(Typography)({
   flexShrink: 0, // Не сжимается
   color: "inherit",
 
-  "@media (max-width: 768px)": {
+  "@media (max-width: 540px)": {
     fontSize: "3.3rem",
   },
 

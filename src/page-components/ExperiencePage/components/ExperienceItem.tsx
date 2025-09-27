@@ -120,7 +120,7 @@ const Period = styled("div")({
 });
 
 const Position = styled("h2")({
-  fontSize: "3rem",
+  fontSize: "2.8rem",
   lineHeight: 1.18,
   color: "#000",
   fontWeight: 400,
@@ -128,10 +128,10 @@ const Position = styled("h2")({
   padding: 0,
 
   "@media (max-width: 768px)": {
-    fontSize: "2.5rem",
+    fontSize: "2rem",
   },
   "@media (max-width: 480px)": {
-    fontSize: "2rem",
+    fontSize: "1.7rem",
   },
 });
 
@@ -160,7 +160,7 @@ const Stack = styled("div")({
   lineHeight: 1.7,
   color: "#000",
 
-  "@media (max-width: 768px)": {
+  "@media (max-width: 540px)": {
     fontSize: "0.88rem",
   },
   "@media (max-width: 480px)": {
@@ -192,7 +192,7 @@ const DropdownTitle = styled("div")({
   color: "#000",
   fontWeight: 600,
 
-  "@media (max-width: 768px)": {
+  "@media (max-width: 540px)": {
     fontSize: "0.88rem",
   },
   "@media (max-width: 480px)": {
@@ -221,7 +221,7 @@ const DescriptionContent = styled("div")({
   color: "#000",
   whiteSpace: "pre-wrap",
 
-  "@media (max-width: 768px)": {
+  "@media (max-width: 540px)": {
     fontSize: "0.88rem",
   },
   "@media (max-width: 480px)": {

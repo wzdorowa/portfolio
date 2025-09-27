@@ -51,7 +51,7 @@ const Subtitle = styled("div")({
   lineHeight: 1.7,
   color: "#000",
 
-  "@media (max-width: 768px)": {
+  "@media (max-width: 540px)": {
     fontSize: "0.88rem",
   },
   "@media (max-width: 480px)": {
@@ -103,7 +103,7 @@ const ButtonText = styled("span")({
   fontSize: "1rem",
   fontWeight: 500,
 
-  "@media (max-width: 768px)": {
+  "@media (max-width: 540px)": {
     fontSize: "0.88rem",
   },
   "@media (max-width: 480px)": {
