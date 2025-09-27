@@ -101,12 +101,9 @@ const Description = styled("div")({
 });
 
 const ContactsBox = styled("div")({
-  marginTop: 40,
+  marginTop: 16,
 
-  "@media (max-width: 768px)": {
-    marginTop: 24,
-  },
   "@media (max-width: 480px)": {
-    marginTop: 16,
+    marginTop: 12,
   },
 });
