@@ -60,6 +60,7 @@ export function ProjectPage({
 
       <ProjectImageSection
         src={projectData.image}
+        mobileSrc={projectData.mobileImage}
         alt={projectData.title}
         id={id}
       />

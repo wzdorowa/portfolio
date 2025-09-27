@@ -7,6 +7,7 @@ import { useImageLoadProgress } from "@/src/hooks";
 interface ProjectImageSectionProps {
   id: string;
   src: string;
+  mobileSrc: string | null;
   alt: string;
 }
 
@@ -31,6 +32,7 @@ const bgImageForProject: Partial<Record<string, string | React.CSSProperties>> =
 export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
   id,
   src,
+  mobileSrc,
   alt,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -87,48 +89,69 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
   };
 
   return (
-    <ImageSection ref={containerRef} $id={id}>
-      {/* Лоадер изображения */}
-      {!isLoaded && <ImageLoader />}
+    <>
+      <ImageSection ref={containerRef} $id={id}>
+        {/* Лоадер изображения */}
+        {!isLoaded && <ImageLoader />}
 
-      <ProjectImage
-        $id={id}
-        src={src}
-        alt={alt}
-        width={1200}
-        height={800}
-        sizes="(max-width: 1920px) 100vw, 1250px"
-        style={{
-          width: "100%",
-          height: "auto",
-          display: "block",
-          opacity: isLoaded ? 1 : 0,
-          transition: "opacity 0.3s ease",
-        }}
-        priority
-      />
+        <ProjectImage
+          $id={id}
+          src={src}
+          alt={alt}
+          width={1200}
+          height={800}
+          sizes="(max-width: 1920px) 100vw, 1250px"
+          style={{
+            width: "100%",
+            height: "auto",
+            display: "block",
+            opacity: isLoaded ? 1 : 0,
+            transition: "opacity 0.3s ease",
+          }}
+          priority
+        />
 
-      {/* Анимированная стрелка для намека на скролл */}
-      {showScrollArrow && isLoaded && (
-        <ScrollArrow onClick={handleArrowClick}>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M8 3V13M8 13L12 9M8 13L4 9"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </ScrollArrow>
-      )}
-    </ImageSection>
+        {/* Анимированная стрелка для намека на скролл */}
+        {showScrollArrow && isLoaded && (
+          <ScrollArrow onClick={handleArrowClick}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M8 3V13M8 13L12 9M8 13L4 9"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </ScrollArrow>
+        )}
+      </ImageSection>
+      <MobileImageSection $id={id}>
+        <ProjectImage
+          $id={id}
+          src={mobileSrc || src}
+          alt={alt}
+          width={1200}
+          height={800}
+          sizes="(max-width: 1920px) 100vw, 1250px"
+          style={{
+            width: "100%",
+            height: "auto",
+            display: "block",
+            opacity: isLoaded ? 1 : 0,
+            transition: "opacity 0.3s ease",
+          }}
+          priority
+        />
+      </MobileImageSection>
+    </>
   );
 };
 
 const ImageSection = styled("div")<{
   $id: string;
 }>(({ $id }) => ({
+  display: "block",
   position: "relative",
   flex: 1,
   minHeight: "100vh",
@@ -142,7 +165,12 @@ const ImageSection = styled("div")<{
     : {}),
 
   "@media (max-width: 1280px)": {
-    overflowY: "visible",
+    alignContent: "flex-start",
+    minHeight: 1,
+    height: "auto",
+  },
+  "@media (max-width: 768px)": {
+    display: "none",
   },
 
   // Стили для скроллбара
@@ -158,6 +186,26 @@ const ImageSection = styled("div")<{
   },
   "&::-webkit-scrollbar-thumb:hover": {
     background: "rgba(0, 0, 0, 0.3)",
+  },
+}));
+
+const MobileImageSection = styled("div")<{
+  $id: string;
+}>(({ $id }) => ({
+  display: "none",
+  position: "relative",
+  flex: 1,
+  minHeight: 1,
+  height: "auto",
+  alignContent: "flex-start",
+  backgroundColor: backgroundForProject[$id] || "transparent",
+  ...(typeof bgImageForProject[$id] === "object" &&
+  !Array.isArray(bgImageForProject[$id])
+    ? bgImageForProject[$id]
+    : {}),
+
+  "@media (max-width: 768px)": {
+    display: "block",
   },
 }));
 
