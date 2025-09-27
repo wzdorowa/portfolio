@@ -52,6 +52,7 @@ export function ProjectPage({
           textColor={projectData.textColor}
           title={projectData.title}
           isEducational={projectData.isEducational}
+          year={projectData.year}
           text={<ProjectContent projectData={projectData} />}
           onBackClick={handleBackClick}
         />

@@ -19,6 +19,7 @@ export interface ProjectData {
   textColor?: TextColor;
   title: string;
   isEducational: boolean;
+  year: number;
   image: string;
   content: ProjectContent;
 }
@@ -29,6 +30,7 @@ export const PROJECT_DATA: readonly ProjectData[] = [
     id: "crypto-landing",
     title: "Крипто-лендинг",
     isEducational: false,
+    year: 2024,
     image: "/images/portfolio/crypto-landing.webp",
     content: {
       task: "Создать лендинг для крипто/DeFi-платформы Apostro, которая объясняет основные направления продукта и\u00A0вызывает доверие потенциальных пользователей. Цель\u00A0— коротко познакомить с\u00A0проектом, обозначить ключевые фичи (vaults, gasless transfers, risk management, asset management), дать CTA для вовлечения (signup, view vault list, learn more), и\u00A0визуально показать технологичность и\u00A0современный характер бренда.",
@@ -87,6 +89,7 @@ export const PROJECT_DATA: readonly ProjectData[] = [
     textColor: "white",
     title: "Много-этажная страница",
     isEducational: true,
+    year: 2025,
     image: "/images/portfolio/murnorka.webp",
     content: {
       task: "Рассказать о\u00A0коллекции меховых шапок для мужчин, женщин и\u00A0детей от\u00A0ателье меховых изделий «Мурнорка» на\u00A0специальной промостранице.",
@@ -137,6 +140,7 @@ export const PROJECT_DATA: readonly ProjectData[] = [
     id: "smart-socket",
     title: "Промо-страница",
     isEducational: true,
+    year: 2025,
     image: "/images/portfolio/smart-socket.webp",
     content: {
       task: "Сделать промостраницу для умной розетки VK. В\u00A0качестве изображения взять умную розетку Яндекса, она почти такая\u00A0же. На\u00A0страницу попадут люди из\u00A0медийной и\u00A0контекстной рекламы. Единая розничная устройства\u00A0— 900\u00A0рублей, продаётся на\u00A0«Озоне», «Вайлдберис», в\u00A0«ДНС» и\u00A0«Эльдорадо».",
@@ -180,6 +184,7 @@ export const PROJECT_DATA: readonly ProjectData[] = [
     textColor: "white",
     title: "Панель управления крипто-активами",
     isEducational: false,
+    year: 2024,
     image: "/images/portfolio/vaults-admin-panel.webp",
     content: {
       task: "Создать удобный инструмент для DeFi-аналитика, позволяющий управлять пулами ликвидности, конфигурацией контрактов и\u00A0транзакциями.",
@@ -232,6 +237,7 @@ export const PROJECT_DATA: readonly ProjectData[] = [
     textColor: "white",
     title: "Сервис доставки",
     isEducational: true,
+    year: 2024,
     image: "/images/portfolio/dostavka.webp",
     content: {
       task: "Разработать интерфейс для онлайн-сервиса курьерской доставки «Быстрые ноги», который позволяет пользователям отслеживать посылки и\u00A0оформлять новые доставки.",
@@ -287,6 +293,7 @@ export const PROJECT_DATA: readonly ProjectData[] = [
     textColor: "white",
     title: "Редизайн главной страницы",
     isEducational: true,
+    year: 2025,
     image: "/images/portfolio/bitzevskaya-fabrica.webp",
     content: {
       task: "Фабрика «Битцевские валенки» обратилась с\u00A0запросом обновить старый сайт, который выглядел устаревшим и\u00A0не\u00A0отражал современный внешний вид валенок. На\u00A0старом сайте всё было спрятано в\u00A0больших текстовых блоках и\u00A0выглядело перегруженно. Пользователь не\u00A0видел, как стильно можно носить валенки, и\u00A0не\u00A0понимал, почему их\u00A0стоит купить.",
@@ -348,6 +355,7 @@ export const PROJECT_DATA: readonly ProjectData[] = [
     id: "resolve-stats",
     title: "Панель крипто-статистики",
     isEducational: false,
+    year: 2025,
     image: "/images/portfolio/resolve-stats.png",
     content: {
       task: "Resolv\u00A0— это DeFi-протокол, связанный с\u00A0обеспечением стейблкоинов и\u00A0управлением залоговыми активами. Основная цель интерфейса\u00A0— дать пользователям (трейдерам, держателям токенов и\u00A0ликвидити-провайдерам) быстрый доступ к\u00A0метрикам «здоровья» протокола и\u00A0рисков.",
@@ -406,6 +414,7 @@ export const PROJECT_DATA: readonly ProjectData[] = [
     textColor: "white",
     title: "Мобильное приложение",
     isEducational: true,
+    year: 2025,
     image: "/images/portfolio/documents.webp",
     content: {
       task: "Создать мобильное приложение для сканирования и\u00A0хранения документов. При этом важно: сделать процесс понятным, лёгким и\u00A0вызвать доверие у\u00A0пользователя.",

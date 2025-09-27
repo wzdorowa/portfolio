@@ -11,6 +11,7 @@ import { TextColor } from "@/src/types/common";
 interface ProjectOverviewProps {
   title: ReactNode;
   isEducational: boolean;
+  year: number;
   text: ReactNode;
   onBackClick?: () => void;
   backgroundColor?: string;
@@ -24,6 +25,7 @@ interface ProjectOverviewProps {
 export const ProjectOverview: FC<ProjectOverviewProps> = ({
   title,
   isEducational,
+  year,
   text,
   onBackClick,
   backgroundColor,
@@ -36,6 +38,7 @@ export const ProjectOverview: FC<ProjectOverviewProps> = ({
         <Hero
           title={title}
           isEducational={isEducational}
+          year={year}
           text={text}
           backgroundColor={backgroundColor}
           textColor={textColor}
@@ -56,7 +59,7 @@ const Root = styled("div")<{
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
-  padding: "42px 48px 80px",
+  padding: "42px 48px 48px",
   minWidth: 580,
   maxWidth: 600,
   height: "100vh",
@@ -80,12 +83,9 @@ const Root = styled("div")<{
 }));
 
 const HeroBox = styled("div")({
-  marginTop: 125,
+  marginTop: 100,
   minHeight: 0,
 
-  "@media (max-width: 1280px)": {
-    marginTop: 100,
-  },
   "@media (max-width: 768px)": {
     marginTop: 64,
   },
@@ -95,7 +95,7 @@ const HeroBox = styled("div")({
 });
 
 const ButtonBox = styled("div")({
-  marginTop: 125,
+  marginTop: 100,
 
   "@media (max-width: 1280px)": {
     marginTop: 64,

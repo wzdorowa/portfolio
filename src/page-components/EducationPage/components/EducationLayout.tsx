@@ -21,7 +21,7 @@ export const EducationLayout = ({ children }: EducationLayoutProps) => (
 
 const Root = styled("div")({
   background: "#fff",
-  padding: "42px 48px 80px",
+  padding: "42px 48px 48px",
   display: "flex",
   flexDirection: "column",
   gap: 100,

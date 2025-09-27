@@ -28,8 +28,8 @@ const BackButtonContainer = styled("button")({
   alignItems: "center",
   justifyContent: "center",
   color: "inherit",
-  width: 64,
-  height: 64,
+  width: 56,
+  height: 56,
 
   "&:hover": {
     opacity: 0.5,

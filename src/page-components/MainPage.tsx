@@ -51,7 +51,7 @@ const Overview = styled("div")({
   flexDirection: "column",
   alignItems: "flex-start",
   gap: 100,
-  padding: "42px 48px 80px",
+  padding: "42px 48px 48px",
   minWidth: 580,
   maxWidth: 600,
   height: "100vh",
@@ -97,7 +97,7 @@ const Title = styled(Typography)({
 
 const Description = styled("div")({
   maxWidth: 435,
-  marginTop: 72,
+  marginTop: 64,
   lineHeight: 1.7,
 
   "@media (max-width: 1440px)": {

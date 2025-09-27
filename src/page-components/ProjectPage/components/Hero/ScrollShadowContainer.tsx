@@ -7,17 +7,20 @@ interface ScrollShadowContainerProps {
   backgroundColor?: string;
 }
 
-export const ScrollShadowContainer = forwardRef<HTMLDivElement, ScrollShadowContainerProps>(({
-  children,
-  className,
-  backgroundColor,
-}, ref) => (
-  <StyledContainer ref={ref} className={className} $backgroundColor={backgroundColor}>
+export const ScrollShadowContainer = forwardRef<
+  HTMLDivElement,
+  ScrollShadowContainerProps
+>(({ children, className, backgroundColor }, ref) => (
+  <StyledContainer
+    ref={ref}
+    className={className}
+    $backgroundColor={backgroundColor}
+  >
     {children}
   </StyledContainer>
 ));
 
-ScrollShadowContainer.displayName = 'ScrollShadowContainer';
+ScrollShadowContainer.displayName = "ScrollShadowContainer";
 
 interface StyledContainerProps {
   $backgroundColor?: string;
@@ -53,7 +56,7 @@ const StyledContainer = styled("div")<StyledContainerProps>(
       bottom: 0,
       left: 0,
       right: 0,
-      height: 20,
+      height: 40,
       background: $backgroundColor
         ? `linear-gradient(to top, ${$backgroundColor} 0%, transparent 100%)`
         : "linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",

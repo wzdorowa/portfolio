@@ -12,6 +12,7 @@ interface HeroProps {
   /** Заголовок секции */
   title: string | ReactNode;
   isEducational: boolean;
+  year: number;
   /** Основной текст */
   text: string | ReactNode;
   /** Цвет фона для scroll shadow */
@@ -27,6 +28,7 @@ interface HeroProps {
 export const Hero: FC<HeroProps> = ({
   title,
   isEducational,
+  year,
   text,
   backgroundColor,
   textColor = "black",
@@ -42,7 +44,11 @@ export const Hero: FC<HeroProps> = ({
     <HeroWrapper>
       <HeroTitleWrapper>
         <HeroTitle variant="h1">{title}</HeroTitle>
-        {isEducational && <Note>Работа в рамках обучения</Note>}
+        <Note>
+          {"("}
+          {isEducational && "работа в рамках обучения, "}
+          {year} год{")"}
+        </Note>
       </HeroTitleWrapper>
 
       <Content $needsFullHeight={shouldUseFullHeight}>
@@ -63,7 +69,7 @@ export const Hero: FC<HeroProps> = ({
 const HeroWrapper = styled("div")({
   display: "flex",
   flexDirection: "column",
-  gap: 72,
+  gap: 64,
   height: "100%",
   color: "inherit",
 
@@ -90,7 +96,7 @@ const HeroTitle = styled(Typography)({
 const HeroTitleWrapper = styled("div")({
   display: "flex",
   flexDirection: "column",
-  gap: 32,
+  gap: 26,
 
   "@media (max-width: 768px)": {
     gap: 24,
@@ -103,6 +109,7 @@ const HeroTitleWrapper = styled("div")({
 
 const Note = styled("span")({
   fontStyle: "italic",
+  opacity: 0.75,
 });
 
 interface ContentProps {
