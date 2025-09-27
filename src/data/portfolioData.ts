@@ -45,8 +45,8 @@ export const PORTFOLIO_ITEMS: readonly PortfolioItem[] = [
     year: 2025,
   },
   {
-    id: "dostavka",
-    image: "/images/portfolio/dostavka.webp",
+    id: "delivery",
+    image: "/images/portfolio/delivery.webp",
     alt: "Сервис доставки",
     year: 2024,
   },

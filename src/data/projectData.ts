@@ -231,13 +231,13 @@ export const PROJECT_DATA: readonly ProjectData[] = [
     },
   },
   {
-    id: "dostavka",
+    id: "delivery",
     backgroundColor: "#53C03A",
     textColor: "white",
     title: "Сервис доставки",
     isEducational: true,
     year: 2024,
-    image: "/images/portfolio/dostavka.webp",
+    image: "/images/portfolio/delivery.webp",
     content: {
       task: "Разработать интерфейс для онлайн-сервиса курьерской доставки «Быстрые ноги», который позволяет пользователям отслеживать посылки и\u00A0оформлять новые доставки.",
       subtasks: [
