@@ -6,6 +6,7 @@ import { styled, Typography } from "@mui/material";
 import { Header } from "../Header";
 import { TextColor } from "../../types/common";
 import { Contacts } from "./Contacts";
+import { Title } from "../Title";
 
 interface OverviewProps {
   title: ReactNode;
@@ -69,21 +70,6 @@ const Main = styled("div")({
   display: "flex",
   flexDirection: "column",
   minHeight: 0, // Позволяет flex-элементу сжиматься меньше своего контента
-});
-
-const Title = styled(Typography)({
-  fontSize: "4.5rem",
-  lineHeight: 1.15,
-  flexShrink: 0, // Не сжимается
-  color: "inherit",
-
-  "@media (max-width: 768px)": {
-    fontSize: "3.3rem",
-  },
-
-  "@media (max-width: 480px)": {
-    fontSize: "2.5rem",
-  },
 });
 
 const Description = styled("div")({

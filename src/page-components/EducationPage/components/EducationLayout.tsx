@@ -1,8 +1,8 @@
 "use client";
 
 import { ReactNode } from "react";
-import { styled, Typography, Box } from "@mui/material";
-import { Header } from "@/src/components";
+import { styled, Box } from "@mui/material";
+import { Header, Title } from "@/src/components";
 import { EDUCATION_TEXT } from "@/src/data";
 
 interface EducationLayoutProps {
@@ -13,7 +13,7 @@ export const EducationLayout = ({ children }: EducationLayoutProps) => (
   <Root>
     <Header />
     <Content>
-      <Title variant="h1">{EDUCATION_TEXT.title}</Title>
+      <CustomTitle variant="h1">{EDUCATION_TEXT.title}</CustomTitle>
       {children}
     </Content>
   </Root>
@@ -46,18 +46,13 @@ const Content = styled(Box)({
   flexDirection: "column",
 });
 
-const Title = styled(Typography)({
-  fontSize: "4.5rem",
-  lineHeight: 1.15,
-  marginBottom: 54,
+const CustomTitle = styled(Title)({
+  marginBottom: 40,
 
   "@media (max-width: 768px)": {
-    fontSize: "3.3rem",
     marginBottom: 36,
   },
-
   "@media (max-width: 480px)": {
-    fontSize: "2.5rem",
     marginBottom: 24,
   },
 });

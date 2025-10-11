@@ -1,12 +1,13 @@
 "use client";
 
 import { FC, ReactNode } from "react";
-import { styled, Typography } from "@mui/material";
+import { styled } from "@mui/material";
 import { useScrollShadow } from "../../../../hooks/useScrollShadow";
 import { useAdaptiveHeight } from "../../../../hooks/useAdaptiveHeight";
 import { ScrollableText } from "./ScrollableText";
 import { ScrollShadowContainer } from "./ScrollShadowContainer";
 import { TextColor } from "@/src/types/common";
+import { Title } from "@/src/components";
 
 interface HeroProps {
   /** Заголовок секции */
@@ -43,7 +44,7 @@ export const Hero: FC<HeroProps> = ({
   return (
     <HeroWrapper>
       <HeroTitleWrapper>
-        <HeroTitle variant="h1">{title}</HeroTitle>
+        <Title variant="h1">{title}</Title>
         <Note>
           {"("}
           {isEducational && "работа в рамках обучения, "}
@@ -78,21 +79,6 @@ const HeroWrapper = styled("div")({
   },
   "@media (max-width: 768px)": {
     gap: 36,
-  },
-});
-
-const HeroTitle = styled(Typography)({
-  fontSize: "4.5rem",
-  lineHeight: 1.15,
-  flexShrink: 0, // Не сжимается
-  color: "inherit",
-
-  "@media (max-width: 540px)": {
-    fontSize: "3.3rem",
-  },
-
-  "@media (max-width: 480px)": {
-    fontSize: "2.5rem",
   },
 });
 
