@@ -1,11 +1,11 @@
 "use client";
 
 import { FC, ReactNode } from "react";
-import { styled, Typography } from "@mui/material";
+import { styled } from "@mui/material";
 
 import { Header } from "../Header";
 import { TextColor } from "../../types/common";
-import { Contacts } from "./Contacts";
+import { Contacts } from "../Contacts";
 import { Title } from "../Title";
 
 interface OverviewProps {

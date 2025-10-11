@@ -4,8 +4,7 @@ import Image from "next/image";
 import React from "react";
 
 import { OVERVIEW_DATA } from "@/src/data";
-import { Header, Title } from "../components";
-import { Contacts } from "../components/Overview/Contacts";
+import { Header, Title, Contacts } from "../components";
 
 export function MainPage() {
   return (
