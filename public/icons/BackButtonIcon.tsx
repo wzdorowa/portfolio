@@ -10,7 +10,10 @@ interface BackButtonIconProps extends React.SVGProps<SVGSVGElement> {
  * @param {BackButtonIconProps} props - Свойства компонента
  * @returns {JSX.Element} SVG иконка
  */
-const BackButtonIcon: FC<BackButtonIconProps> = ({ className, ...props }) => (
+export const BackButtonIcon: FC<BackButtonIconProps> = ({
+  className,
+  ...props
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 64 64"
@@ -46,5 +49,3 @@ const BackButtonIcon: FC<BackButtonIconProps> = ({ className, ...props }) => (
     </defs>
   </svg>
 );
-
-export default BackButtonIcon;

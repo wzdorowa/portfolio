@@ -2,8 +2,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { montserrat } from "./fonts";
 import ThemeRegistry from "./ThemeRegistry";
-import { LoadingProvider } from "../src/providers/LoadingProvider";
-import { PageTransitionWrapper } from "../src/components/PageTransitionWrapper";
 
 export const metadata: Metadata = {
   title: "Вероника Здорова - Портфолио",
@@ -18,13 +16,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${montserrat.variable} ${montserrat.className}`}>
-        <ThemeRegistry>
-          <LoadingProvider>
-            <PageTransitionWrapper>
-              {children}
-            </PageTransitionWrapper>
-          </LoadingProvider>
-        </ThemeRegistry>
+        <ThemeRegistry>{children}</ThemeRegistry>
       </body>
     </html>
   );

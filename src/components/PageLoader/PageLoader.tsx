@@ -3,6 +3,7 @@
 import { FC } from "react";
 import { styled, keyframes } from "@mui/material";
 import { Box } from "@mui/material";
+import { PortfolioIcon } from "@/public/icons";
 
 /**
  * Компонент лоадера страницы
@@ -12,29 +13,31 @@ export const PageLoader: FC = () => {
   return (
     <LoaderOverlay>
       <LoaderContainer>
-        <Spinner />
+        <LoaderIcon>
+          <PortfolioIcon />
+        </LoaderIcon>
         <LoaderText>Загрузка...</LoaderText>
       </LoaderContainer>
     </LoaderOverlay>
   );
 };
 
-// Анимации
-const spin = keyframes`
+// Анимация
+const portfolio = keyframes`
   0% {
     transform: rotate(0deg);
   }
-  100% {
-    transform: rotate(360deg);
+  25% {
+    transform: rotate(7deg);
   }
-`;
-
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-7deg);
   }
   100% {
-    opacity: 1;
+    transform: rotate(0deg);
   }
 `;
 
@@ -53,19 +56,17 @@ const LoaderOverlay = styled(Box)(({ theme }) => ({
 }));
 
 const LoaderContainer = styled("div")({
+  width: "100%",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   gap: 16,
 });
 
-const Spinner = styled("div")({
-  width: 40,
-  height: 40,
-  border: "3px solid #f3f3f3",
-  borderTop: "3px solid #4e64d5",
-  borderRadius: "50%",
-  animation: `${spin} 1s linear infinite`,
+const LoaderIcon = styled("div")({
+  width: "20%",
+  height: "auto",
+  animation: `${portfolio} 2s cubic-bezier(.76,.24,.88,.33) infinite`,
 });
 
 const LoaderText = styled("div")({

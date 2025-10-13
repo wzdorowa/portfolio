@@ -36,7 +36,7 @@ export function MainPage() {
 const Root = styled("div")({
   display: "grid",
   gridTemplateColumns: "1fr 2fr",
-  height: "100vh",
+  height: "100%",
 
   "@media (max-width: 1440px)": {
     display: "flex",

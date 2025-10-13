@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { styled } from "@mui/material";
-import BackButtonIcon from "@/public/icons/BackButtonIcon";
+import { BackButtonIcon } from "@/public/icons";
 
 interface BackButtonProps {
   onClick?: () => void;

@@ -94,22 +94,24 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
         {/* Лоадер изображения */}
         {!isLoaded && <ImageLoader />}
 
-        <ProjectImage
-          $id={id}
-          src={src}
-          alt={alt}
-          width={1200}
-          height={800}
-          sizes="(max-width: 1920px) 100vw, 1250px"
-          style={{
-            width: "100%",
-            height: "auto",
-            display: "block",
-            opacity: isLoaded ? 1 : 0,
-            transition: "opacity 0.3s ease",
-          }}
-          priority
-        />
+        {isLoaded && (
+          <ProjectImage
+            $id={id}
+            src={src}
+            alt={alt}
+            width={1200}
+            height={800}
+            sizes="(max-width: 1920px) 100vw, 1250px"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              opacity: isLoaded ? 1 : 0,
+              transition: "opacity 0.3s ease",
+            }}
+            priority
+          />
+        )}
 
         {/* Анимированная стрелка для намека на скролл */}
         {showScrollArrow && isLoaded && (
@@ -127,22 +129,26 @@ export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
         )}
       </ImageSection>
       <MobileImageSection $id={id}>
-        <ProjectImage
-          $id={id}
-          src={mobileSrc || src}
-          alt={alt}
-          width={1200}
-          height={800}
-          sizes="(max-width: 1920px) 100vw, 1250px"
-          style={{
-            width: "100%",
-            height: "auto",
-            display: "block",
-            opacity: isLoaded ? 1 : 0,
-            transition: "opacity 0.3s ease",
-          }}
-          priority
-        />
+        {!isLoaded && <ImageLoader />}
+
+        {isLoaded && (
+          <ProjectImage
+            $id={id}
+            src={mobileSrc || src}
+            alt={alt}
+            width={1200}
+            height={800}
+            sizes="(max-width: 1920px) 100vw, 1250px"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              opacity: isLoaded ? 1 : 0,
+              transition: "opacity 0.3s ease",
+            }}
+            priority
+          />
+        )}
       </MobileImageSection>
     </>
   );

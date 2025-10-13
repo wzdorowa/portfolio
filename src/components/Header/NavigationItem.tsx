@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { NavigationItem, NavigationItemProps } from "./types";
 import { TextColor } from "../../types/common";
-import { useLoading } from "../../providers/LoadingProvider";
 
 /**
  * Компонент элемента навигации
@@ -17,12 +16,10 @@ export const NavigationItemComponent: FC<{
   textColor?: TextColor;
 }> = ({ item, isActive, isExactMatch, textColor = "black" }) => {
   const router = useRouter();
-  const { setIsLoading } = useLoading();
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (!isExactMatch) {
-      setIsLoading(true);
       router.push(item.href);
     }
   };
@@ -34,7 +31,11 @@ export const NavigationItemComponent: FC<{
           <Typography variant="body1">{item.label}</Typography>
         </NavigationText>
       ) : (
-        <NavigationLink $textColor={textColor} href={item.href} onClick={handleClick}>
+        <NavigationLink
+          $textColor={textColor}
+          href={item.href}
+          onClick={handleClick}
+        >
           <Typography variant="body1">{item.label}</Typography>
         </NavigationLink>
       )}

@@ -2,6 +2,7 @@
 
 import { FC } from "react";
 import { styled, keyframes } from "@mui/material";
+import { PortfolioIcon } from "@/public/icons";
 
 /**
  * Компонент лоадера для изображений
@@ -10,43 +11,53 @@ import { styled, keyframes } from "@mui/material";
 export const ImageLoader: FC = () => {
   return (
     <LoaderContainer>
-      <Spinner />
-      <ProgressText>Загрузка изображения...</ProgressText>
+      <LoaderIcon>
+        <PortfolioIcon />
+      </LoaderIcon>
+      <ProgressText>Загрузка проекта...</ProgressText>
     </LoaderContainer>
   );
 };
 
-const spin = keyframes`
+const portfolio = keyframes`
   0% {
     transform: rotate(0deg);
   }
+  25% {
+    transform: rotate(7deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-7deg);
+  }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 `;
 
 const LoaderContainer = styled("div")({
-  position: "absolute",
-  top: 0,
-  left: 0,
   width: "100%",
   height: "100%",
-  backgroundColor: "#f8f9fa",
+  backgroundColor: "#fff",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
   gap: 16,
   zIndex: 1,
+  padding: "40px 0",
+
+  "@media (max-width: 1280px)": {
+    justifyContent: "space-around",
+  },
 });
 
-const Spinner = styled("div")({
-  width: 40,
-  height: 40,
-  border: "3px solid #e0e0e0",
-  borderTop: "3px solid #1976d2",
-  borderRadius: "50%",
-  animation: `${spin} 1s linear infinite`,
+const LoaderIcon = styled("div")({
+  width: "33%",
+  height: "auto",
+  animation: `${portfolio} 2s cubic-bezier(.76,.24,.88,.33) infinite`,
 });
 
 const ProgressText = styled("p")({
