@@ -64,7 +64,8 @@ const LoaderContainer = styled("div")({
 });
 
 const LoaderIcon = styled("div")({
-  width: "20%",
+  width: "33%",
+  maxWidth: 200,
   height: "auto",
   animation: `${portfolio} 2s cubic-bezier(.76,.24,.88,.33) infinite`,
 });

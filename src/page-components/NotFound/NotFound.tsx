@@ -14,7 +14,7 @@ export function NotFoundPage() {
         <span>Такой страницы нет.</span>
         <span>
           Проверьте URL или перейдите на{" "}
-          <NavigationLink href="/"> главную страницу</NavigationLink>.
+          <NavigationLink href="/"> главную&nbsp;страницу</NavigationLink>.
         </span>
       </TextBox>
     </Root>
@@ -31,6 +31,17 @@ const Root = styled("div")(({ theme }) => ({
   alignItems: "center",
   gap: 54,
   flexGrow: 1,
+  padding: "24px 128px 160px 48px",
+
+  "@media (max-width: 1300px)": {
+    padding: "24px 128px 120px 48px",
+  },
+  "@media (max-width: 768px)": {
+    padding: "24px 48px 100px 32px",
+  },
+  "@media (max-width: 480px)": {
+    padding: "16px 32px 64px 16px",
+  },
 }));
 
 const TextBox = styled("div")({
@@ -41,6 +52,7 @@ const TextBox = styled("div")({
 
   "& span:nth-child(2)": {
     marginTop: 12,
+    textAlign: "center",
   },
 });
 

@@ -90,7 +90,8 @@ const Root = styled("div")({
 });
 
 const Icon = styled("svg")({
-  width: 400,
+  maxWidth: 400,
+  width: "100%",
   height: "auto",
 });
 
