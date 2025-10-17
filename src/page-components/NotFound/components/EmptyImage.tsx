@@ -71,14 +71,11 @@ const feather = keyframes`
   0% {
     transform: translateX(5%) translateY(-25%) skew(0deg, 0deg);
   }
-  25% {
-    transform: translateX(-5%) translateY(-18%) skew(0deg, -2deg);
+  33% {
+    transform: translateX(-5%) translateY(-11%) skew(0deg, -2deg);
   }
-  50% {
-    transform: translateX(20%) translateY(0%) skew(3deg, -10deg);
-  }
-  75% {
-    transform: translateX(-15%) translateY(6%) skew(8deg, -2deg);
+  66% {
+    transform: translateX(20%) translateY(4%) skew(3deg, -10deg);
   }
   100% {
     transform: translateX(10%) translateY(19%) skew(0deg, 0deg);
