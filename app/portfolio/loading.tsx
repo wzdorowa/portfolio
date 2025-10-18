@@ -1,6 +1,6 @@
 "use client";
 
-import { PageLoader } from "@/src/components";
+import { PageLoader } from "@/src/components/ui";
 import React from "react";
 
 // eslint-disable-next-line import/no-default-export

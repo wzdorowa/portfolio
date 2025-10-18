@@ -4,7 +4,7 @@ import { FC } from "react";
 import { styled } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { ImageLoader } from "@/src/components";
+import { ImageLoader } from "@/src/components/ui";
 import { useImageLoadProgress } from "@/src/hooks";
 
 interface PortfolioCardProps {
@@ -21,7 +21,7 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({ id, image, alt }) => {
       <CardContainer>
         {/* Лоадер изображения */}
         {!isLoaded && <ImageLoader />}
-        
+
         <CardImage
           src={image}
           alt={alt}

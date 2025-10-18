@@ -4,7 +4,7 @@ import { styled } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { NavigationItem, NavigationItemProps } from "./types";
-import { TextColor } from "../../types/common";
+import { TextColor } from "@/src/types/common";
 
 /**
  * Компонент элемента навигации

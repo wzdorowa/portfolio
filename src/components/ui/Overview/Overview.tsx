@@ -3,8 +3,8 @@
 import { FC, ReactNode } from "react";
 import { styled } from "@mui/material";
 
+import { TextColor } from "@/src/types/common";
 import { Header } from "../Header";
-import { TextColor } from "../../types/common";
 import { Contacts } from "../Contacts";
 import { Title } from "../Title";
 

@@ -4,7 +4,7 @@ import { styled } from "@mui/material";
 import React from "react";
 import Box from "@mui/material/Box";
 
-import { Overview } from "@/src/components";
+import { Overview } from "@/src/components/ui";
 import { PORTFOLIO_ITEMS, OVERVIEW_DATA } from "@/src/data";
 import { PortfolioCard as PortfolioCardComponent } from "./components";
 

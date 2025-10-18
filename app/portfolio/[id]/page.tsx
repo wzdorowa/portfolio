@@ -2,7 +2,7 @@ import {
   ProjectPage,
   getProjectData,
   getAllProjectIds,
-} from "@/src/page-components";
+} from "@/src/components/pages";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 

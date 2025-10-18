@@ -1,7 +1,7 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { styled } from "@mui/material";
 import Image from "next/image";
-import { ImageLoader } from "@/src/components";
+import { ImageLoader } from "@/src/components/ui";
 import { useImageLoadProgress } from "@/src/hooks";
 
 interface ProjectImageSectionProps {

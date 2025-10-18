@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import { styled, Box } from "@mui/material";
-import { Header, Title } from "@/src/components";
+import { Header, Title } from "@/src/components/ui";
 
 interface PageLayoutProps {
   title: string;

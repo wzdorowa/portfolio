@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import { EDUCATION_TEXT } from "@/src/data";
-import { PageLayout } from "@/src/components";
+import { PageLayout } from "@/src/components/ui";
 
 interface EducationLayoutProps {
   children: ReactNode;

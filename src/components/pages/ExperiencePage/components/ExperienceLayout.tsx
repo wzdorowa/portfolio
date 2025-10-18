@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import { EXPERIENCE_PAGE_CONTENT } from "@/src/data";
-import { PageLayout } from "@/src/components";
+import { PageLayout } from "@/src/components/ui";
 
 interface ExperienceLayoutProps {
   children: ReactNode;

@@ -3,7 +3,7 @@
 import { FC, ReactNode } from "react";
 import { styled } from "@mui/material";
 
-import { Header } from "@/src/components";
+import { Header } from "@/src/components/ui";
 import { Hero } from "./Hero";
 import { BackButton } from "./BackButton";
 import { TextColor } from "@/src/types/common";

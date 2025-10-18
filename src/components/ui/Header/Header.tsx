@@ -6,7 +6,7 @@ import { styled } from "@mui/material";
 import { NAVIGATION_ITEMS } from "./constants";
 import { NavigationItemComponent } from "./NavigationItem";
 import { isActivePage, isExactMatch } from "./utils";
-import { TextColor } from "../../types/common";
+import { TextColor } from "@/src/types/common";
 
 interface HeaderProps {
   textColor?: TextColor;

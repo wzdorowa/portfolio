@@ -2,12 +2,12 @@
 
 import { FC, ReactNode } from "react";
 import { styled } from "@mui/material";
-import { useScrollShadow } from "../../../../hooks/useScrollShadow";
-import { useAdaptiveHeight } from "../../../../hooks/useAdaptiveHeight";
+import { useScrollShadow } from "@/src/hooks/useScrollShadow";
+import { useAdaptiveHeight } from "@/src/hooks/useAdaptiveHeight";
 import { ScrollableText } from "./ScrollableText";
 import { ScrollShadowContainer } from "./ScrollShadowContainer";
 import { TextColor } from "@/src/types/common";
-import { Title } from "@/src/components";
+import { Title } from "@/src/components/ui";
 
 interface HeroProps {
   /** Заголовок секции */

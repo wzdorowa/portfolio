@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { styled } from "@mui/material";
-import { Overview } from "@/src/components";
+import { Overview } from "@/src/components/ui";
 
 interface ProjectNotFoundProps {
   onBackClick: () => void;
