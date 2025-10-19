@@ -19,15 +19,14 @@ const borderForProject: Partial<Record<string, boolean>> = {
   default: false,
   "resolve-stats": true,
 };
-const bgImageForProject: Partial<Record<string, string | React.CSSProperties>> =
-  {
-    default: "none",
-    documents: {
-      backgroundColor: "#F9FBFE",
-      backgroundImage:
-        "repeating-radial-gradient( circle at 0 0, transparent 0, #F9FBFE 32px ), repeating-linear-gradient( #F1F5FE55, #F1F5FE );",
-    },
-  };
+const bgImageForProject: Partial<Record<string, null | React.CSSProperties>> = {
+  default: null,
+  documents: {
+    backgroundColor: "#F9FBFE",
+    backgroundImage:
+      "repeating-radial-gradient( circle at 0 0, transparent 0, #F9FBFE 32px ), repeating-linear-gradient( #F1F5FE55, #F1F5FE );",
+  },
+};
 
 export const ProjectImageSection: FC<ProjectImageSectionProps> = ({
   id,
@@ -165,10 +164,7 @@ const ImageSection = styled("div")<{
   overflowY: "auto", // Скролл при переполнении
   alignContent: "center",
   backgroundColor: backgroundForProject[$id] || "transparent",
-  ...(typeof bgImageForProject[$id] === "object" &&
-  !Array.isArray(bgImageForProject[$id])
-    ? bgImageForProject[$id]
-    : {}),
+  ...(!!bgImageForProject[$id] ? bgImageForProject[$id] : {}),
 
   "@media (max-width: 1280px)": {
     alignContent: "flex-start",
