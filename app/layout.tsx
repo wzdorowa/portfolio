@@ -1,22 +1,25 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import { montserrat } from "./fonts";
-import ThemeRegistry from "./ThemeRegistry";
+import { Metadata } from "next";
+
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+
+import { AppWrapper } from "@/src/components/layout";
 
 export const metadata: Metadata = {
   title: "Вероника Здорова - Портфолио",
   description: "Портфолио UI/UX дизайнера и фронтенд-разработчика",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="ru" style={{ scrollBehavior: "smooth" }}>
-      <body className={`${montserrat.className}`}>
-        <ThemeRegistry>{children}</ThemeRegistry>
+      <body>
+        <AppRouterCacheProvider>
+          <AppWrapper>{children}</AppWrapper>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

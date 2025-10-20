@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles";
-import { Montserrat } from "@/app/assets/fonts/Montserrat";
+import { Montserrat } from "@/src/assets/fonts/Montserrat";
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
@@ -61,5 +61,3 @@ const theme = createTheme({
     },
   },
 });
-
-export default theme;
