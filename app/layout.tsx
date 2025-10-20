@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru">
+    <html lang="ru" style={{ scrollBehavior: "smooth" }}>
       <body className={`${montserrat.className}`}>
         <ThemeRegistry>{children}</ThemeRegistry>
       </body>
