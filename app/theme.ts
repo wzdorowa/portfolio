@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+import { Montserrat } from "@/app/assets/fonts/Montserrat";
 
 const theme = createTheme({
   palette: {
@@ -11,7 +12,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "var(--font-montserrat), Arial, sans-serif",
+    fontFamily: `${Montserrat.style.fontFamily}, Arial, sans-serif`,
     h1: {
       fontWeight: 400,
       lineHeight: 1,

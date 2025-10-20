@@ -1,6 +1,6 @@
-import { Montserrat } from "next/font/google";
+import { Montserrat as Montserrat_Font } from "next/font/google";
 
-export const montserrat = Montserrat({
+export const Montserrat = Montserrat_Font({
   weight: ["300", "400", "500", "600", "700"],
   style: ["normal"],
   subsets: ["latin", "cyrillic"],
