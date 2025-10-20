@@ -83,6 +83,7 @@ const baseButtonStyles = {
   border: "2px solid black",
   backgroundColor: "#ffffff",
   cursor: "pointer",
+  color: "inherit",
 
   "&:hover": {
     borderColor: "#4d7cef",
