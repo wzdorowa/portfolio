@@ -3,10 +3,16 @@
 import Link from "next/link";
 import { styled } from "@mui/material";
 import { EXPERIENCE_PAGE_CONTENT } from "@/src/data";
+import { Contacts } from "@/src/components/ui";
 
 export const PageSubtitle = () => (
   <Container>
-    <Subtitle>{EXPERIENCE_PAGE_CONTENT.subtitle}</Subtitle>
+    <Subtitle>
+      {EXPERIENCE_PAGE_CONTENT.subtitle.map((text, i) => (
+        <p key={i}>{text}</p>
+      ))}
+      <Contacts />
+    </Subtitle>
 
     <ButtonsContainer>
       <DownloadButton
@@ -34,7 +40,7 @@ export const PageSubtitle = () => (
 const Container = styled("div")({
   display: "flex",
   flexDirection: "column",
-  gap: 24,
+  gap: 40,
   marginBottom: 80,
 
   "@media (max-width: 768px)": {
