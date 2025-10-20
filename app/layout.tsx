@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={`${montserrat.variable} ${montserrat.className}`}>
+      <body className={`${montserrat.className}`}>
         <ThemeRegistry>{children}</ThemeRegistry>
       </body>
     </html>
