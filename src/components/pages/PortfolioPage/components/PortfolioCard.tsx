@@ -17,7 +17,7 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({ id, image, alt }) => {
   const { isLoaded } = useImageLoadProgress(image);
 
   return (
-    <Link href={`/portfolio/${id}`} passHref>
+    <ProjectLink href={`/portfolio/${id}`} passHref>
       <CardContainer>
         {/* Лоадер изображения */}
         {!isLoaded && <ImageLoader />}
@@ -34,9 +34,13 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({ id, image, alt }) => {
           }}
         />
       </CardContainer>
-    </Link>
+    </ProjectLink>
   );
 };
+
+const ProjectLink = styled(Link)({
+  textDecoration: "none",
+});
 
 const CardContainer = styled("div")({
   position: "relative",
@@ -46,8 +50,11 @@ const CardContainer = styled("div")({
   transition: "transform 0.3s ease",
   cursor: "pointer",
   display: "block",
-  textDecoration: "none",
   backgroundColor: "#f5f5f5",
+
+  "@media (max-width: 768px)": {
+    height: "32vh",
+  },
 
   "&:hover": {
     transform: "scale(1.05)",

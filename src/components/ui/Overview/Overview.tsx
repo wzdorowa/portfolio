@@ -74,7 +74,7 @@ const Main = styled("div")({
 
 const Description = styled("div")({
   maxWidth: 435,
-  marginTop: 64,
+  marginTop: 32,
   lineHeight: 1.7,
 
   "@media (max-width: 1280px)": {
@@ -82,7 +82,11 @@ const Description = styled("div")({
   },
 
   "@media (max-width: 768px)": {
-    marginTop: 36,
+    marginTop: 24,
+  },
+
+  "@media (max-width: 480px)": {
+    marginTop: 16,
   },
 });
 

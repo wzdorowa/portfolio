@@ -85,7 +85,7 @@ const Description = styled("div")({
   lineHeight: 1.7,
 
   "@media (max-width: 1440px)": {
-    marginTop: 48,
+    marginTop: 40,
     maxWidth: 785,
   },
 
@@ -94,10 +94,10 @@ const Description = styled("div")({
   },
 
   "@media (max-width: 768px)": {
-    marginTop: 36,
+    marginTop: 32,
   },
   "@media (max-width: 480px)": {
-    marginTop: 24,
+    marginTop: 20,
   },
 });
 
@@ -116,14 +116,12 @@ const ImageColumn = styled("div")({
 
   "@media (max-width: 1440px)": {
     height: "100%",
-    margin: "0 48px 64px 48px",
+    margin: "0 48px 48px 48px",
   },
   "@media (max-width: 768px)": {
-    minHeight: 400,
     margin: "0 32px 32px 32px",
   },
   "@media (max-width: 480px)": {
-    minHeight: 1,
     margin: "0 16px 16px 16px",
   },
 });

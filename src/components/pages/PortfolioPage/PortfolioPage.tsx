@@ -49,7 +49,7 @@ const PortfolioSection = styled(Box)({
 
   "@media (max-width: 1440px)": {
     gap: 32,
-    padding: "50px 64px 76px 48px",
+    padding: "50px 48px 76px 48px",
   },
 
   "@media (max-width: 1280px)": {
@@ -57,10 +57,10 @@ const PortfolioSection = styled(Box)({
     padding: "24px 128px 40px 48px",
   },
   "@media (max-width: 768px)": {
-    padding: "24px 48px 40px 32px",
+    padding: "24px 24px 48px 24px",
   },
   "@media (max-width: 480px)": {
-    padding: "24px 32px 24px 16px",
+    padding: "16px 16px 32px 16px",
   },
 });
 

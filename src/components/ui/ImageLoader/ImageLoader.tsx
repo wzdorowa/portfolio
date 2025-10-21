@@ -67,4 +67,5 @@ const ProgressText = styled("p")({
   fontWeight: 500,
   fontFamily: "inherit",
   letterSpacing: "0.5px",
+  textDecoration: "none",
 });
