@@ -18,7 +18,7 @@ export const EXPERIENCE_DATA: readonly ExperienceData[] = [
     company: "Apostro",
     companyLink: "https://app.apostro.xyz/protocols",
     stack:
-      "Стек технологий: TypeScript, Next, React, React Router, styled-components, RxJS.",
+      "Стек технологий: TypeScript, Next, React, React Router, RxJS, styled-components.",
     description: `Помогала поддерживать и\u00A0обновлять существующую кодовую базу по\u00A0фронтенду.
 Приняла участие в:
     — реализация новых фич:
