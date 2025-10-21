@@ -2,16 +2,19 @@
 
 import React from "react";
 import { styled } from "@mui/material";
-import { EDUCATION_RESOURCES, EDUCATION_TEXT } from "@/src/data";
 
 interface CertificateModalProps {
   isOpen: boolean;
   onClose: () => void;
+  pdfFile: string;
+  title: string;
 }
 
 export const CertificateModal = ({
   isOpen,
   onClose,
+  pdfFile,
+  title,
 }: CertificateModalProps) => {
   if (!isOpen) return null;
 
@@ -19,12 +22,7 @@ export const CertificateModal = ({
     <Modal onClick={onClose}>
       <ModalContent onClick={(e: React.MouseEvent) => e.stopPropagation()}>
         <CloseButton onClick={onClose}>✕</CloseButton>
-        <PdfViewer
-          src={EDUCATION_RESOURCES.pdfFile}
-          title={EDUCATION_TEXT.modalTitle}
-          width="100%"
-          height="100%"
-        />
+        <PdfViewer src={pdfFile} title={title} width="100%" height="100%" />
       </ModalContent>
     </Modal>
   );

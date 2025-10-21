@@ -18,9 +18,9 @@ export const useModal = (initialState = false) => {
   }, []);
 
   return {
-    isOpen,
-    openModal,
-    closeModal,
+    isOpenDesign: isOpen,
+    openModalDesign: openModal,
+    closeModalDesign: closeModal,
     toggleModal,
   };
 };

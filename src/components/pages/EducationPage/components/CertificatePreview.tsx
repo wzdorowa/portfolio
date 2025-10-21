@@ -3,20 +3,20 @@
 import React from "react";
 import { styled } from "@mui/material";
 import { ZoomInSharp } from "@mui/icons-material";
-import { EDUCATION_RESOURCES, EDUCATION_TEXT } from "@/src/data";
 
 interface CertificatePreviewProps {
   onOpen: () => void;
+  image: string;
+  alt: string;
 }
 
 export const CertificatePreview: React.FC<CertificatePreviewProps> = ({
   onOpen,
+  image,
+  alt,
 }) => (
   <PdfThumb onClick={onOpen}>
-    <CertificateImage
-      src={EDUCATION_RESOURCES.educationImage}
-      alt={EDUCATION_TEXT.certificateAlt}
-    />
+    <CertificateImage src={image} alt={alt} />
     <IconWrapper className="magnify-icon">
       <ZoomInSharp />
     </IconWrapper>
@@ -31,11 +31,17 @@ const PdfThumb = styled("div")({
   boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
   transition: "transform 0.2s",
   overflow: "hidden",
+
   "&:hover": {
     transform: "scale(1.04)",
     "& .magnify-icon": {
       opacity: 1,
     },
+  },
+
+  "@media (max-width: 580px)": {
+    width: "100%",
+    height: "auto",
   },
 });
 

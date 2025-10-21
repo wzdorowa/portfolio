@@ -51,7 +51,7 @@ const CustomTitle = styled(Title)({
   marginBottom: 40,
 
   "@media (max-width: 768px)": {
-    marginBottom: 36,
+    marginBottom: 24,
   },
   "@media (max-width: 480px)": {
     marginBottom: 16,
